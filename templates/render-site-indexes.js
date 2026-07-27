@@ -4,8 +4,8 @@ const guides = require("./guide-page-data");
 
 const root = path.resolve(__dirname, "..");
 const site = "https://toolsquark.com";
-const lastmod = "2026-07-17";
-const reviewedDate = "July 17, 2026";
+const lastmod = "2026-07-27";
+const reviewedDate = "July 27, 2026";
 
 const groups = {
   health: {
@@ -34,6 +34,7 @@ const groups = {
           ["body-fat-calculator", "Body Fat Calculator", "Estimate body fat percentage using circumference measurements.", "Estimate Fat %"],
           ["lean-body-mass-calculator", "Lean Body Mass Calculator", "Estimate non-fat body mass from height, weight, and sex profile.", "Check Lean Mass"],
           ["weight-trend-smoothing-calculator", "Weight Trend Smoothing Calculator", "Compare weekly average weights to reduce daily scale noise.", "Smooth Trend"],
+          ["weekly-weight-change-rate-calculator", "Weekly Weight Change Rate", "Convert a multi-day weight trend into lb/week or kg/week.", "Check Rate"],
           ["waist-to-height-ratio-calculator", "Waist-to-Height Ratio", "Screen central fat distribution by comparing waist with height.", "Check WHtR"],
           ["waist-hip-ratio-calculator", "Waist Hip Ratio", "Compare waist and hip measurements for body fat distribution context.", "Check WHR"],
           ["healthy-weight-range-calculator", "Healthy Weight Range", "Estimate a BMI-based adult weight range from height.", "Find Range"]
@@ -46,6 +47,7 @@ const groups = {
           ["bmr-calculator", "BMR Calculator", "Estimate resting calories with the Mifflin-St Jeor equation before activity is added.", "Calculate BMR"],
           ["maintenance-calorie-calibration-calculator", "Maintenance Calorie Calibration", "Adjust estimated maintenance calories from recent intake and weight trend.", "Calibrate TDEE"],
           ["calorie-calculator", "Daily Calorie Goal Calculator", "Apply a visible maintenance, deficit, or surplus adjustment to estimated energy.", "Plan Calories"],
+          ["calorie-deficit-percentage-calculator", "Calorie Deficit Percentage", "Compare planned intake with maintenance calories as a percentage.", "Check Deficit"],
           ["calorie-deficit-timeline-calculator", "Calorie Deficit Timeline", "Estimate a simplified weight-change timeline from target deficit.", "Estimate Timeline"],
           ["macro-calculator", "Custom Macro Calculator", "Distribute an existing calorie target across adjustable macro inputs.", "Split Macros"],
           ["protein-calculator", "Protein Calculator", "Find a realistic protein range for training and recovery goals.", "Set Protein"],
@@ -130,6 +132,7 @@ const groups = {
         tools: [
           ["sleep-calculator", "Sleep Schedule Calculator", "Plan a bedtime or wake time from sleep duration and expected sleep latency.", "Plan Sleep", true],
           ["sleep-debt-calculator", "Sleep Debt Calculator", "Estimate your weekly sleep deficit from target and recent average sleep.", "Estimate Debt"],
+          ["sleep-opportunity-calculator", "Sleep Opportunity Calculator", "Compare time in bed with estimated available sleep time.", "Check Opportunity"],
           ["sleep-efficiency-calculator", "Sleep Efficiency Calculator", "Compare time asleep with time in bed and identify a practical next step.", "Check Efficiency"],
           ["sleep-inertia-calculator", "Sleep Inertia Calculator", "Estimate wake grogginess risk and plan a practical morning buffer.", "Estimate Grogginess"],
           ["nap-duration-calculator", "Nap Duration Calculator", "Choose a short nap or longer recovery nap from available time and bedtime distance.", "Plan Nap"],
@@ -146,6 +149,8 @@ const groups = {
           ["daily-steps-goal-calculator", "Daily Steps Goal Calculator", "Build a progressive step target plan from your current baseline.", "Plan Steps"],
           ["walking-time-to-steps-calculator", "Walking Time To Steps", "Estimate steps from walking minutes and pace presets.", "Convert Time"],
           ["walking-distance-to-steps-calculator", "Walking Distance To Steps", "Convert miles or kilometers into estimated walking steps.", "Convert Distance"],
+          ["step-count-to-distance-calculator", "Step Count To Distance", "Convert steps into estimated miles or kilometers using stride length.", "Convert Steps"],
+          ["stride-length-calculator", "Stride Length Calculator", "Calculate stride length from a measured distance and step count.", "Find Stride"],
           ["walking-pace-time-calculator", "Walking Pace Time Calculator", "Convert walking distance and pace into total time, or time into pace.", "Plan Walk"],
           ["steps-to-calories-converter", "Steps to Calories Converter", "Estimate walking energy with explicit simplified assumptions.", "Estimate Energy"],
           ["exercise-calories-to-steps-calculator", "Exercise Calories To Steps", "Convert exercise calories into a rough walking step equivalent.", "Convert Calories"],

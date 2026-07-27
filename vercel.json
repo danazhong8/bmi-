@@ -52,6 +52,11 @@
       "permanent": true
     },
     {
+      "source": "/calorie-deficit-percentage-calculator.html",
+      "destination": "/tools/calorie-deficit-percentage-calculator.html",
+      "permanent": true
+    },
+    {
       "source": "/caffeine-half-life-calculator.html",
       "destination": "/tools/caffeine-half-life-calculator.html",
       "permanent": true
@@ -232,6 +237,11 @@
       "permanent": true
     },
     {
+      "source": "/sleep-opportunity-calculator.html",
+      "destination": "/tools/sleep-opportunity-calculator.html",
+      "permanent": true
+    },
+    {
       "source": "/sleep-efficiency-calculator.html",
       "destination": "/tools/sleep-efficiency-calculator.html",
       "permanent": true
@@ -274,6 +284,16 @@
     {
       "source": "/steps-to-calories-converter.html",
       "destination": "/tools/steps-to-calories-converter.html",
+      "permanent": true
+    },
+    {
+      "source": "/step-count-to-distance-calculator.html",
+      "destination": "/tools/step-count-to-distance-calculator.html",
+      "permanent": true
+    },
+    {
+      "source": "/stride-length-calculator.html",
+      "destination": "/tools/stride-length-calculator.html",
       "permanent": true
     },
     {
@@ -329,6 +349,11 @@
     {
       "source": "/weight-trend-smoothing-calculator.html",
       "destination": "/tools/weight-trend-smoothing-calculator.html",
+      "permanent": true
+    },
+    {
+      "source": "/weekly-weight-change-rate-calculator.html",
+      "destination": "/tools/weekly-weight-change-rate-calculator.html",
       "permanent": true
     },
     {
