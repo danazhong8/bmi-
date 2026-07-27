@@ -3,25 +3,32 @@ module.exports = {
   categoryLabel: "Lifestyle Tools",
   slug: "sleep-opportunity-calculator",
   title: "Sleep Opportunity Calculator | Time In Bed Vs Sleep Time",
-  description: "Estimate sleep opportunity from time in bed, sleep latency, and awake time. Compare time in bed with likely sleep time.",
+  description: "Estimate sleep opportunity from time in bed, sleep latency, and awake time. Compare time in bed, sleep efficiency, and likely sleep time.",
   h1: "Sleep Opportunity Calculator",
-  hero: "Estimate how much sleep opportunity your schedule actually gives after sleep latency and awake time are considered.",
-  heroHighlights: ["Time in bed vs sleep time", "Latency included", "Pairs with sleep debt"],
+  hero: "Estimate how much sleep opportunity your schedule actually gives after sleep latency and awake time are considered. Use it before judging sleep debt, sleep efficiency, or bedtime timing.",
+  heroHighlights: ["Time in bed vs sleep time", "Latency and awakenings included", "Sleep debt next step"],
   schemaName: "Privacy-First Sleep Opportunity Calculator",
   schemaDescription: "A browser-side calculator that estimates sleep opportunity from time in bed, sleep latency, and wake-after-sleep time.",
   lastUpdated: "July 27, 2026",
   buttonText: "Calculate Sleep Opportunity",
+  shareResult: true,
+  dynamicNextSteps: true,
   resultHtml: `
             <div class="result-val"><span id="calc-output">0</span><span class="result-unit">hours</span></div>
             <div class="result-status" id="calc-status">Estimated Sleep Opportunity</div>
             <p class="result-desc" id="calc-desc"></p>
-            <div class="suggestion-box"><h4>Schedule Note</h4><p id="calc-suggestion"></p></div>`,
+            <div class="result-boundary"><strong>What this does not mean</strong><span>This estimate does not measure sleep stages, sleep quality, insomnia, or clinical sleep risk.</span></div>
+            <div class="suggestion-box"><h4>Schedule Note</h4><p id="calc-suggestion"></p></div>
+            <div class="next-step-panel"><h4>Recommended Next Step</h4><div id="next-step-cards" class="next-step-grid"><p class="next-step-empty">Calculate first to see the most relevant follow-up.</p></div></div>
+            <div class="share-result-panel"><h4>Shareable Result Summary</h4><p id="share-summary">Calculate first, then copy a short plain-text summary with the sleep opportunity estimate and page link.</p><button type="button" class="share-copy-btn" onclick="copyShareResult()">Copy Summary</button><span id="share-copy-status" aria-live="polite"></span></div>`,
   controlsHtml: `
+        <div class="intent-banner"><strong>Separate time in bed from likely sleep time.</strong><span>An 8-hour window can become much less sleep once latency and awake time are included.</span></div>
         <div class="input-row">
             <div class="input-group"><label for="input_time_bed">Time In Bed</label><div class="input-wrapper"><input type="number" id="input_time_bed" value="8" min="1" max="14" step="0.25"><span class="unit-badge">hours</span></div></div>
             <div class="input-group"><label for="input_latency">Time To Fall Asleep</label><div class="input-wrapper"><input type="number" id="input_latency" value="20" min="0" max="180" step="5"><span class="unit-badge">min</span></div></div>
         </div>
         <div class="input-group"><label for="input_awake">Estimated Awake Time During Night</label><div class="input-wrapper"><input type="number" id="input_awake" value="20" min="0" max="240" step="5"><span class="unit-badge">min</span></div></div>`,
+  extraCss: `.intent-banner{display:grid;gap:5px;margin-bottom:14px;padding:14px 16px;border:1px solid #bfdbfe;background:#eff6ff;border-radius:10px;color:#1e3a8a}.intent-banner strong{font-size:15px}.intent-banner span{font-size:13px;line-height:1.5;color:#334155}`,
   relatedTitle: "Review Sleep Further",
   related: [
     { href: "https://toolsquark.com/tools/sleep-debt-calculator.html", title: "Sleep Debt Calculator", description: "Compare estimated sleep time with your target across several nights.", action: "Estimate Debt" },
@@ -35,12 +42,16 @@ module.exports = {
   faq: [
     { question: "What is sleep opportunity?", answer: "Sleep opportunity is the amount of time your schedule makes available for sleep after accounting for time to fall asleep and awake time during the night." },
     { question: "Is time in bed the same as sleep time?", answer: "No. Time in bed includes time spent trying to fall asleep and time awake during the night. Actual sleep time is usually lower." },
+    { question: "How much time in bed do I need for 7 hours of sleep?", answer: "If you usually need 20 minutes to fall asleep and spend 20 minutes awake during the night, you need about 7 hours 40 minutes in bed to create 7 hours of sleep opportunity." },
+    { question: "How is sleep opportunity different from sleep efficiency?", answer: "Sleep opportunity estimates available sleep time in hours. Sleep efficiency expresses time asleep as a percentage of time in bed." },
     { question: "Can this diagnose insomnia?", answer: "No. This is an educational schedule estimate. Persistent difficulty falling asleep, staying asleep, or daytime impairment deserves qualified support." }
   ],
   contentSections: [
     { title: "What This Calculator Estimates", body: `<p>This calculator separates time in bed from likely sleep time. It helps explain why an eight-hour window may not produce eight hours of sleep.</p>` },
     { title: "Formula Used", body: `<div class="formula-box">Estimated sleep opportunity = time in bed - sleep latency - awake time during the night</div><p>Latency and awake time are converted from minutes to hours before subtraction.</p>` },
-    { title: "How To Use The Result", body: `<p>If the result is below your sleep target, the schedule may need a longer window, shorter wind-down delay, fewer awakenings, or a more realistic wake time. Pair this with sleep debt and sleep efficiency tools for context.</p>` }
+    { title: "How To Use The Result", body: `<p>If the result is below your sleep target, the schedule may need a longer window, shorter wind-down delay, fewer awakenings, or a more realistic wake time. Pair this with sleep debt and sleep efficiency tools for context.</p>` },
+    { title: "Worked Examples", body: `<table class="comparison-table"><thead><tr><th>Time In Bed</th><th>Latency + Awake Time</th><th>Sleep Opportunity</th></tr></thead><tbody><tr><td>8h 00m</td><td>20m + 20m</td><td>7h 20m</td></tr><tr><td>7h 30m</td><td>30m + 30m</td><td>6h 30m</td></tr><tr><td>9h 00m</td><td>15m + 15m</td><td>8h 30m</td></tr></tbody></table>` },
+    { title: "When To Use Related Sleep Tools", body: `<div class="use-case-grid"><div class="use-case-card"><strong>Sleep debt</strong><span>Use when the opportunity is below your target across several nights.</span></div><div class="use-case-card"><strong>Sleep efficiency</strong><span>Use when time in bed is long but awake time is high.</span></div><div class="use-case-card"><strong>Sleep schedule</strong><span>Use when bedtime or wake time needs to move to create a larger window.</span></div></div>` }
   ],
   methodology: "This tool subtracts entered sleep latency and awake time from total time in bed to estimate available sleep opportunity.",
   disclaimer: "Sleep opportunity is an educational schedule estimate and does not diagnose sleep disorders, insomnia, or sleep quality.",
@@ -61,6 +72,10 @@ function calculateNow(){
   document.getElementById('calc-status').innerText=status;
   document.getElementById('calc-desc').innerText='Time in bed: '+formatHours(timeBed)+'. Latency plus awake time: '+(latency+awake)+' minutes. Estimated sleep opportunity: '+formatHours(opportunity)+'.';
   document.getElementById('calc-suggestion').innerText=suggestion;
+  setNextStepRecommendations([
+    { label: 'Sleep Debt Calculator', href: 'https://toolsquark.com/tools/sleep-debt-calculator.html', reason: 'Use this sleep opportunity estimate across several nights to estimate debt.', action: 'Estimate Debt' },
+    { label: 'Sleep Efficiency Calculator', href: 'https://toolsquark.com/tools/sleep-efficiency-calculator.html', reason: 'Check the percentage relationship between time asleep and time in bed.', action: 'Check Efficiency' }
+  ]);
   document.getElementById('result-area').scrollIntoView({behavior:'smooth',block:'nearest'});
 }`
 };
