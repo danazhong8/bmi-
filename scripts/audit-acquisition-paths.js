@@ -9,9 +9,11 @@ const errors = [];
 const guideSlugs = new Set(guides.map((guide) => guide.slug));
 const homepageFeaturedGuides = [
   "mifflin-st-jeor-equation-explained",
-  "bmr-vs-tdee-vs-calorie-goal",
+  "tdee-activity-multiplier-explained",
   "maintenance-calories-vs-calorie-deficit",
-  "desk-breaks-walking-and-focus-planning"
+  "bmr-vs-tdee-vs-calorie-goal",
+  "desk-breaks-walking-and-focus-planning",
+  "body-metrics-calorie-planning-tools"
 ];
 const guideHubHeadings = [
   "Start With These Decision Guides",
