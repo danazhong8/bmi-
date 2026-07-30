@@ -2,11 +2,11 @@ module.exports = {
   categoryHref: "lifestyle.html",
   categoryLabel: "Lifestyle Tools",
   slug: "walking-time-to-steps-calculator",
-  title: "Walking Time To Steps Calculator: 30, 45, 60 Min Examples",
-  description: "Convert walking minutes to estimated steps or estimate how long a step goal may take. Includes 30, 45, 60 minute and 10,000 step examples by pace.",
-  h1: "Walking Time To Steps Calculator: Minutes, Pace, Steps",
-  hero: "Estimate steps from walking time, or use the same pace logic backward to estimate how many minutes a step goal may take. The examples cover 30, 45, and 60 minute walks plus common 5,000 and 10,000 step targets.",
-  heroHighlights: ["30, 45, 60 minute examples", "Steps-to-minutes reverse estimate", "Easy, moderate, brisk pace"],
+  title: "Walking Time To Steps Calculator | Minutes To Steps",
+  description: "Convert walking minutes to steps with easy, moderate, and brisk pace presets. See 30, 45, 60 minute walks and how long 5,000 or 10,000 steps may take.",
+  h1: "Walking Time To Steps Calculator",
+  hero: "Convert minutes of walking into estimated steps before you leave. Choose a pace preset, get a quick step estimate, then use the result to plan a daily step goal or compare against your phone after the walk.",
+  heroHighlights: ["Minutes to steps", "30, 45, 60 min examples", "5,000 and 10,000 step timing"],
   schemaName: "Privacy-First Walking Time To Steps Calculator",
   schemaDescription: "A browser-side calculator that estimates walking steps from walking minutes and pace presets.",
   lastUpdated: "July 24, 2026",
@@ -19,8 +19,8 @@ module.exports = {
   dynamicNextSteps: true,
   controlsHtml: `
         <div class="walking-plan-banner">
-            <strong>Estimate steps before the walk.</strong>
-            <span>Choose time and pace to create a practical walking estimate, then compare it with your phone or wearable after the walk.</span>
+            <strong>Trying to answer "how many steps is my walk?"</strong>
+            <span>Enter the walking time, choose easy/moderate/brisk pace, and copy a plain-language estimate you can reuse in a step plan.</span>
         </div>
         <div class="input-row">
             <div class="input-group">
@@ -82,6 +82,10 @@ module.exports = {
       body: `<table class="comparison-table"><thead><tr><th>Walking Time</th><th>Easy Pace</th><th>Moderate Pace</th><th>Brisk Pace</th></tr></thead><tbody><tr><td>10 minutes</td><td>900 steps</td><td>1,100 steps</td><td>1,250 steps</td></tr><tr><td>20 minutes</td><td>1,800 steps</td><td>2,200 steps</td><td>2,500 steps</td></tr><tr><td>30 minutes</td><td>2,700 steps</td><td>3,300 steps</td><td>3,750 steps</td></tr><tr><td>45 minutes</td><td>4,050 steps</td><td>4,950 steps</td><td>5,625 steps</td></tr><tr><td>60 minutes</td><td>5,400 steps</td><td>6,600 steps</td><td>7,500 steps</td></tr></tbody></table><p>Use the table for quick planning, then compare against your phone or wearable after the walk.</p>`
     },
     {
+      title: "Search-Friendly Examples",
+      body: `<div class="use-case-grid"><div class="use-case-card"><strong>How many steps is 30 minutes?</strong><span>About 3,300 steps at a moderate pace, or 2,700 to 3,750 steps across the built-in presets.</span></div><div class="use-case-card"><strong>How many steps is 45 minutes?</strong><span>About 4,950 steps at a moderate pace, useful when planning a longer lunch walk or commute segment.</span></div><div class="use-case-card"><strong>How long is 10,000 steps?</strong><span>About 91 minutes at a moderate pace, with slower and faster estimates shown in the table above.</span></div></div>`
+    },
+    {
       title: "How To Calibrate It",
       body: `<p>After a few walks, compare the estimate with your phone or wearable. If the calculator is consistently high or low for your gait, choose a slower or faster preset next time.</p>`
     },
@@ -105,7 +109,7 @@ function calculateNow() {
         status: 'Walking Step Estimate',
         color: 'var(--accent)',
         desc: minutes + ' minutes at about ' + cadence + ' steps per minute gives an estimated ' + steps.toLocaleString() + ' steps.',
-        suggestion: 'Use this for planning, then compare with a phone or wearable after the walk.',
+        suggestion: 'Use this as a planning estimate. For better accuracy, compare it with your phone or wearable after one real walk and adjust the pace preset next time.',
         percent: Math.min(95, Math.max(5, steps / 10000 * 90))
     };
     document.getElementById('result-area').style.display = 'block';
@@ -118,7 +122,7 @@ function calculateNow() {
     document.getElementById('gauge-pointer').style.left = result.percent + '%';
     setNextStepRecommendations([
         { label: 'Daily Steps Goal Calculator', href: 'https://toolsquark.com/tools/daily-steps-goal-calculator.html', reason: 'Turn this single-walk estimate into a realistic daily or weekly step target.', action: 'Plan Steps' },
-        { label: 'Steps To Calories Converter', href: 'https://toolsquark.com/tools/steps-to-calories-converter.html', reason: 'Use the estimated steps for a rough walking calorie-burn estimate.', action: 'Estimate Burn' }
+        { label: 'Walking Pace Time Calculator', href: 'https://toolsquark.com/tools/walking-pace-time-calculator.html', reason: 'Estimate how long a route may take before turning it into steps.', action: 'Plan Route' }
     ]);
     document.getElementById('result-area').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }`

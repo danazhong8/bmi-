@@ -1,10 +1,10 @@
 module.exports = {
   slug: "tdee-calculator",
-  title: "TDEE Calculator: Maintenance Calories By Activity Level",
-  description: "Estimate TDEE and maintenance calories from Mifflin-St Jeor BMR and activity multipliers. Compare sedentary, light, moderate, and very active levels.",
-  h1: "TDEE Calculator: Maintenance Calories By Activity Level",
-  hero: "Estimate total daily energy expenditure from Mifflin-St Jeor BMR and a clear activity multiplier. Use the result as maintenance calories first, then calibrate before choosing a deficit or surplus.",
-  heroHighlights: ["Maintenance calories by activity", "BMR x activity multiplier", "Calibration next step"],
+  title: "TDEE Calculator | Maintenance Calories By Activity Level",
+  description: "Estimate maintenance calories with a TDEE calculator using Mifflin-St Jeor BMR and activity multipliers. Compare sedentary, light, moderate, and active levels.",
+  h1: "TDEE Calculator",
+  hero: "Estimate your maintenance calories from BMR and activity level. This page keeps TDEE focused on the first decision users search for: what calorie number maintains current weight before a deficit, surplus, or macro split.",
+  heroHighlights: ["Maintenance calories first", "Mifflin-St Jeor BMR", "Activity multiplier comparison"],
   schemaName: "Privacy-First TDEE Calculator",
   schemaDescription: "A browser-side Total Daily Energy Expenditure calculator focused on estimated maintenance energy and real-world calibration.",
   lastUpdated: "July 24, 2026",
@@ -17,8 +17,8 @@ module.exports = {
   dynamicNextSteps: true,
   controlsHtml: `
         <div class="maintenance-estimate-banner">
-            <strong>Maintenance calories before diet targets.</strong>
-            <span>TDEE is the maintenance estimate. Calculate it first, then move to a calorie goal only if you want a visible deficit, maintenance, or surplus target.</span>
+            <strong>Looking for your maintenance calories?</strong>
+            <span>TDEE is the full-day maintenance estimate. Calculate it first, then decide whether to keep maintenance, create a deficit, or test a small surplus.</span>
         </div>
         <div class="unit-switcher">
             <div class="unit-tab active" id="tab-metric" onclick="switchUnit('metric')">Metric Units (kg/cm)</div>
@@ -153,6 +153,10 @@ module.exports = {
     {
       title: "Maintenance Calories By Activity Level",
       body: `<p>The same BMR can produce very different maintenance estimates once activity is added. For example, a 1,650 kcal BMR becomes about 1,980 kcal at sedentary, 2,269 kcal at light activity, 2,558 kcal at moderate activity, and 2,846 kcal at very active.</p><p>This is the main reason TDEE pages should show the multiplier clearly. If activity is uncertain, start conservative and use trend data rather than choosing the highest label.</p>`
+    },
+    {
+      title: "TDEE vs Calorie Goal",
+      body: `<table class="comparison-table"><thead><tr><th>Number</th><th>What It Answers</th><th>Best Next Step</th></tr></thead><tbody><tr><td>TDEE</td><td>How many calories may maintain current weight?</td><td>Track average intake and body-weight trend.</td></tr><tr><td>Calorie deficit</td><td>How far below maintenance should I start?</td><td>Use a modest percentage instead of an aggressive cut.</td></tr><tr><td>Calorie surplus</td><td>How much extra energy supports gaining?</td><td>Keep the surplus small and review trend speed.</td></tr></tbody></table><p>This distinction helps the page match maintenance-calorie searches without promising an exact weight-change result.</p>`
     },
     {
       title: "Best Use Cases For TDEE",
@@ -306,10 +310,11 @@ function calculateNow() {
     document.getElementById('calc-output').style.color = color;
     document.getElementById('calc-status').innerText = status;
     document.getElementById('calc-status').style.color = color;
-    document.getElementById('calc-desc').innerText = \`Your estimated TDEE is \${tdee.toLocaleString()} kcal/day. This is your approximate maintenance target for your current body metrics and activity level.\`;
-    document.getElementById('calc-suggestion').innerText = 'Compare average intake and body-weight trend over two to four weeks. Use the Daily Calorie Goal Calculator only when you are ready to apply an explicit goal adjustment.';
+    document.getElementById('calc-desc').innerText = \`Estimated maintenance calories: \${tdee.toLocaleString()} kcal/day, based on Mifflin-St Jeor BMR and your selected activity multiplier.\`;
+    document.getElementById('calc-suggestion').innerText = 'Treat this as a starting maintenance estimate. Hold intake steady for two to four weeks, compare average body-weight trend, then adjust with a small deficit or surplus if needed.';
     document.getElementById('gauge-pointer').style.left = percent + '%';
     setNextStepRecommendations([
+        { label: 'Maintenance Calorie Calibration', href: 'https://toolsquark.com/tools/maintenance-calorie-calibration-calculator.html', reason: 'Compare estimated maintenance with real intake and weight trend.', action: 'Calibrate' },
         { label: 'Daily Calorie Goal Calculator', href: 'https://toolsquark.com/tools/calorie-calculator.html', reason: 'Apply a visible deficit, maintenance, or surplus after estimating TDEE.', action: 'Plan Goal' },
         { label: 'Activity Multiplier Guide', href: 'https://toolsquark.com/guides/tdee-activity-multiplier-explained.html', reason: 'Check whether your selected activity factor matches your real week.', action: 'Read Guide' }
     ]);

@@ -2,10 +2,11 @@ module.exports = {
   categoryHref: "health.html",
   categoryLabel: "Health Tools",
   slug: "weight-trend-smoothing-calculator",
-  title: "Weight Trend Smoothing Calculator | 7-Day Average Weight",
-  description: "Calculate a simple 7-day average weight and compare it with last week's average to reduce daily scale noise.",
+  title: "Weight Trend Smoothing Calculator | Weekly Average Weight",
+  description: "Compare this week's average weight with last week's average to smooth daily scale noise and judge whether your weight trend is stable, rising, or falling.",
   h1: "Weight Trend Smoothing Calculator",
-  hero: "Smooth daily scale noise by comparing this week's average weight with last week's average.",
+  hero: "Compare two weekly average weights so one high or low weigh-in does not drive the decision. Use the result before changing calories, training, or expectations.",
+  heroHighlights: ["Weekly average weight", "Scale noise filter", "Calorie calibration next step"],
   schemaName: "Weight Trend Smoothing Calculator",
   schemaDescription: "A browser-side calculator for comparing two weekly average body-weight values.",
   lastUpdated: "June 28, 2026",
@@ -14,12 +15,22 @@ module.exports = {
             <div class="result-val"><span id="calc-output">0</span><span class="result-unit">lb/week</span></div>
             <div class="result-status" id="calc-status">Weekly Trend</div>
             <p class="result-desc" id="calc-desc"></p>
-            <div class="suggestion-box"><h4>Trend Reading</h4><p id="calc-suggestion"></p></div>`,
+            <div class="result-boundary"><strong>What this does not mean</strong><span>A one-week average change cannot prove fat loss, fat gain, or body-composition change. Use repeated trends and context.</span></div>
+            <div class="suggestion-box"><h4>Trend Reading</h4><p id="calc-suggestion"></p></div>
+            <div class="next-step-panel"><h4>Recommended Next Step</h4><div id="next-step-cards" class="next-step-grid"><p class="next-step-empty">Calculate first to see the most relevant follow-up.</p></div></div>
+            <div class="share-result-panel"><h4>Shareable Result Summary</h4><p id="share-summary">Calculate first, then copy a short plain-text summary with the weekly average change and page link.</p><button type="button" class="share-copy-btn" onclick="copyShareResult()">Copy Summary</button><span id="share-copy-status" aria-live="polite"></span></div>`,
+  shareResult: true,
+  dynamicNextSteps: true,
   controlsHtml: `
+        <div class="trend-banner">
+            <strong>Use weekly averages before judging progress.</strong>
+            <span>Enter last week's average and this week's average. The calculator reports the direction and gives a safer next step.</span>
+        </div>
         <div class="input-row">
             <div class="input-group"><label for="last_avg">Last Week Average</label><div class="input-wrapper"><input type="number" id="last_avg" value="180.5" min="40" max="700" step="0.1"><span class="unit-badge">lb</span></div></div>
             <div class="input-group"><label for="this_avg">This Week Average</label><div class="input-wrapper"><input type="number" id="this_avg" value="179.8" min="40" max="700" step="0.1"><span class="unit-badge">lb</span></div></div>
         </div>`,
+  extraCss: `.trend-banner{display:grid;gap:5px;margin-bottom:14px;padding:14px 16px;border:1px solid #fed7aa;background:#fff7ed;border-radius:10px;color:#7c2d12}.trend-banner strong{font-size:15px}.trend-banner span{font-size:13px;line-height:1.5;color:#9a3412}`,
   relatedTitle: "Use The Trend",
   related: [
     { href: "https://toolsquark.com/tools/maintenance-calorie-calibration-calculator.html", title: "Maintenance Calorie Calibration", description: "Use a multi-week trend to calibrate maintenance calories.", action: "Calibrate" },
@@ -31,12 +42,16 @@ module.exports = {
   faq: [
     { question: "Why use weekly averages?", answer: "Daily weight can move because of water, sodium, carbohydrate intake, digestion, soreness, and timing. Weekly averages reduce some of that noise." },
     { question: "Is one week enough to decide if a plan works?", answer: "Usually no. One week can be noisy. Use this as a quick check and compare multiple weeks before making major changes." },
-    { question: "Can this calculate body fat change?", answer: "No. It only compares scale-weight averages. It cannot separate fat, lean mass, water, or digestive contents." }
+    { question: "Can this calculate body fat change?", answer: "No. It only compares scale-weight averages. It cannot separate fat, lean mass, water, or digestive contents." },
+    { question: "What is a 7-day average weight?", answer: "A 7-day average adds seven daily weigh-ins and divides by seven. Comparing two weekly averages usually gives a calmer signal than comparing two single days." },
+    { question: "When should I change calories based on weight trend?", answer: "Avoid changing calories after one noisy week. Look for repeated direction across at least two to four weeks, then adjust gradually." }
   ],
   contentSections: [
     { title: "What This Calculator Measures", body: `<p>This calculator compares two weekly average weights. It is meant to reduce the emotional noise of single weigh-ins and make the direction easier to see.</p>` },
     { title: "Formula Used", body: `<div class="formula-box">Weekly trend = this week's average - last week's average</div><p>A negative result indicates a lower weekly average; a positive result indicates a higher weekly average.</p>` },
-    { title: "How To Use The Result", body: `<p>Small changes can be ordinary noise. Look for repeated direction across several weeks before changing calories, training, or expectations.</p>` }
+    { title: "How To Use The Result", body: `<p>Small changes can be ordinary noise. Look for repeated direction across several weeks before changing calories, training, or expectations.</p>` },
+    { title: "Example Weight Trend Reading", body: `<p>If last week's average was 180.5 lb and this week's average is 179.8 lb, the weekly average moved down by 0.7 lb. That may suggest progress, but the next decision should still consider hunger, energy, training, sodium, sleep, and adherence.</p>` },
+    { title: "When To Pair This With Calorie Calibration", body: `<p>If weight is moving faster or slower than expected for several weeks, use the <a href="https://toolsquark.com/tools/maintenance-calorie-calibration-calculator.html">Maintenance Calorie Calibration Calculator</a>. It compares average intake with weight trend so you can update estimated maintenance more carefully.</p>` }
   ],
   methodology: "This tool subtracts last week's average weight from this week's average weight and maps the difference to simple editorial trend bands.",
   disclaimer: "Weight trends are educational planning signals and do not diagnose health status or body composition.",
@@ -55,6 +70,10 @@ function calculateNow(){
   document.getElementById('calc-status').innerText=status;
   document.getElementById('calc-desc').innerText='Last week average: '+last.toFixed(1)+' lb. This week average: '+current.toFixed(1)+' lb. Difference: '+diff.toFixed(1)+' lb.';
   document.getElementById('calc-suggestion').innerText=suggestion;
+  setNextStepRecommendations([
+    { label: 'Maintenance Calorie Calibration', href: 'https://toolsquark.com/tools/maintenance-calorie-calibration-calculator.html', reason: 'Use trend plus intake data before changing your maintenance estimate.', action: 'Calibrate' },
+    { label: 'Weekly Weight Change Rate', href: 'https://toolsquark.com/tools/weekly-weight-change-rate-calculator.html', reason: 'Convert a multi-day trend into lb/week or kg/week.', action: 'Compare Rate' }
+  ]);
   document.getElementById('result-area').scrollIntoView({behavior:'smooth',block:'nearest'});
 }`
 };
