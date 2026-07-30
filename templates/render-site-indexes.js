@@ -372,6 +372,16 @@ ${footer()}
 
 function renderHome() {
   const toolBySlug = Object.fromEntries(Object.values(groups).flatMap((group) => group.sections.flatMap((section) => section.tools)).map((tool) => [tool[0], tool]));
+  const nearWinTools = [
+    "walking-time-to-steps-calculator",
+    "walking-pace-time-calculator",
+    "tdee-calculator",
+    "weight-trend-smoothing-calculator",
+    "walking-distance-to-steps-calculator",
+    "calorie-deficit-percentage-calculator",
+    "sleep-opportunity-calculator",
+    "maintenance-calorie-calibration-calculator"
+  ].map((slug) => toolBySlug[slug]).filter(Boolean);
   const startingPoints = [
     "bmi-calculator",
     "bmr-calculator",
@@ -396,11 +406,28 @@ function renderHome() {
     "stress-index-test": { taskTitle: "Map your current stress pattern", theme: "mental", chips: ["Private self-check", "Educational limits"] },
     "relationship-check-in-planner": { taskTitle: "Prepare a clearer relationship conversation", theme: "connection", chips: ["Topic focus", "Next words"] }
   };
+  const nearWinDetails = {
+    "walking-time-to-steps-calculator": { taskTitle: "How many steps is a 30, 45, or 60 minute walk?", theme: "movement", chips: ["Minutes to steps", "Pace presets"] },
+    "walking-pace-time-calculator": { taskTitle: "How long will this walking route take?", theme: "movement", chips: ["Miles or km", "Pace to time"] },
+    "tdee-calculator": { taskTitle: "What are my maintenance calories?", theme: "energy", chips: ["TDEE", "Activity level"] },
+    "weight-trend-smoothing-calculator": { taskTitle: "Is my weight trend actually changing?", theme: "body", chips: ["Weekly average", "Scale noise"] },
+    "walking-distance-to-steps-calculator": { taskTitle: "How many steps is this distance?", theme: "movement", chips: ["Distance to steps", "Stride context"] },
+    "calorie-deficit-percentage-calculator": { taskTitle: "How large is my calorie deficit?", theme: "energy", chips: ["Maintenance based", "Deficit %"] },
+    "sleep-opportunity-calculator": { taskTitle: "How much sleep opportunity do I really have?", theme: "sleep", chips: ["Time in bed", "Sleep window"] },
+    "maintenance-calorie-calibration-calculator": { taskTitle: "Can my real trend recalibrate maintenance?", theme: "energy", chips: ["Intake + trend", "Adjustment logic"] }
+  };
   const renderStartingPointCard = (tool) => renderToolCard(tool, {
     ...taskCardDetails[tool[0]],
     popular: true,
     badge: "Start here",
     source: "starting-points",
+    taskCard: true
+  });
+  const renderNearWinCard = (tool) => renderToolCard(tool, {
+    ...nearWinDetails[tool[0]],
+    popular: true,
+    badge: "Useful now",
+    source: "near-win-home",
     taskCard: true
   });
   const categoryDescriptions = {
@@ -409,7 +436,7 @@ function renderHome() {
     lifestyle: "Sleep planning, daily movement, follow-through, and digital habits.",
     connection: "Relationship needs, support, emotional communication, and repair."
   };
-  const featuredGuideSlugs = ["metric-vs-imperial-bmi-formula", "mifflin-st-jeor-equation-explained", "bmr-vs-tdee-vs-calorie-goal", "maintenance-calories-vs-calorie-deficit"];
+  const featuredGuideSlugs = ["mifflin-st-jeor-equation-explained", "bmr-vs-tdee-vs-calorie-goal", "maintenance-calories-vs-calorie-deficit", "desk-breaks-walking-and-focus-planning"];
   const featuredGuides = featuredGuideSlugs
     .map((slug) => guides.find((guide) => guide.slug === slug))
     .filter(Boolean)
@@ -437,12 +464,12 @@ function renderHome() {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="${site}/">
-<title>Health Calculators, Self-Checks & Guides | ToolsQuark</title>
-<meta name="description" content="Use transparent health calculators, original private self-checks, and evidence-informed decision guides. No account required; inputs stay in your browser.">
+<title>Practical Calculators & Private Self-Checks | ToolsQuark</title>
+<meta name="description" content="Use practical calculators and private self-checks for maintenance calories, walking steps, sleep timing, body metrics, stress, habits, and relationships.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ToolsQuark">
-<meta property="og:title" content="Health Calculators, Self-Checks & Guides">
-<meta property="og:description" content="Transparent calculations, private reflection, and practical guides for understanding numbers and patterns.">
+<meta property="og:title" content="Practical Calculators & Private Self-Checks">
+<meta property="og:description" content="Transparent browser-local tools for maintenance calories, walking steps, sleep timing, body metrics, stress, habits, and relationships.">
 <meta property="og:url" content="${site}/">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">
@@ -507,8 +534,9 @@ ${JSON.stringify([
 <body>
 <nav class="navbar"><a href="index.html" class="logo">ToolsQuark</a><div class="nav-links"><a href="health.html">Health</a><a href="mental-health.html">Mental Health</a><a href="lifestyle.html">Lifestyle</a><a href="emotional-connection.html">Relationships</a><a href="guides.html">Guides</a></div></nav>
 <div class="container">
-    <header class="hero"><div class="hero-copy"><p class="hero-kicker">Private tools for health, habits, sleep, and relationships</p><h1>Turn Personal Questions Into Clear Next Steps</h1><p>Use transparent calculators, original self-checks, and decision guides to understand numbers, patterns, and practical options without creating an account.</p><div class="search-wrapper" id="searchWrapper"><input type="search" id="searchInput" class="search-input" placeholder="Search BMI, BMR, calories, sleep, stress, relationship..." autocomplete="off" aria-label="Search ToolsQuark calculators and self-checks" aria-controls="searchResults" aria-expanded="false"><div class="search-results" id="searchResults" role="region" aria-label="Calculator and self-check search results" aria-live="polite"></div></div><div class="hero-actions"><a href="health.html">Use calculators</a><a href="mental-health.html">Try self-checks</a><a href="guides.html">Explore guides</a></div><div class="trust-badges"><span>Transparent methods</span><span>No registration</span><span>Inputs stay in your browser</span></div></div><aside class="hero-visual" aria-labelledby="hero-visual-heading"><div class="hero-visual-header"><small>Decision dashboard</small><h2 id="hero-visual-heading">Choose the path that matches your question</h2><p>Each route moves from a real-life question to a tool, an explainable result, and a next step.</p></div><div class="path-board"><a class="path-row" href="tools/bmr-calculator.html" data-source="hero-path"><span class="path-label"><strong>Body metrics</strong><span>BMI, BMR, TDEE</span></span><span class="path-flow"><span class="path-step"><b>Question</b><span>What number do I need?</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Tool</b><span>Calculator</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Result</b><span>Formula shown</span></span></span></a><a class="path-row" href="tools/sleep-consistency-calculator.html" data-source="hero-path"><span class="path-label"><strong>Sleep rhythm</strong><span>Timing, debt, quality</span></span><span class="path-flow"><span class="path-step"><b>Question</b><span>Why am I tired?</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Tool</b><span>Sleep check</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Result</b><span>Pattern view</span></span></span></a><a class="path-row" href="tools/stress-index-test.html" data-source="hero-path"><span class="path-label"><strong>Mental noise</strong><span>Stress, focus, phone use</span></span><span class="path-flow"><span class="path-step"><b>Question</b><span>What is draining me?</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Tool</b><span>Self-check</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Result</b><span>Limits stated</span></span></span></a><a class="path-row" href="tools/relationship-check-in-planner.html" data-source="hero-path"><span class="path-label"><strong>Connection</strong><span>Needs, boundaries, repair</span></span><span class="path-flow"><span class="path-step"><b>Question</b><span>What should I say?</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Tool</b><span>Planner</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Result</b><span>Next step</span></span></span></a></div><div class="visual-metrics"><span>Browser-local inputs</span><span>Method and limits shown</span><span>Educational, not diagnostic</span></div></aside></header>
+    <header class="hero"><div class="hero-copy"><p class="hero-kicker">Private tools for health, habits, sleep, and relationships</p><h1>Practical Calculators & Self-Checks For Daily Decisions</h1><p>Estimate maintenance calories, walking steps, sleep timing, body metrics, stress patterns, and relationship next steps with transparent browser-local tools.</p><div class="search-wrapper" id="searchWrapper"><input type="search" id="searchInput" class="search-input" placeholder="Search TDEE, walking steps, weight trend, sleep, stress..." autocomplete="off" aria-label="Search ToolsQuark calculators and self-checks" aria-controls="searchResults" aria-expanded="false"><div class="search-results" id="searchResults" role="region" aria-label="Calculator and self-check search results" aria-live="polite"></div></div><div class="hero-actions"><a href="tools/tdee-calculator.html">Plan calories</a><a href="tools/walking-time-to-steps-calculator.html">Estimate walking steps</a><a href="tools/sleep-opportunity-calculator.html">Check sleep timing</a><a href="mental-health.html">Try a self-check</a></div><div class="trust-badges"><span>Formulas disclosed</span><span>Runs in your browser</span><span>Educational, not diagnostic</span><span>Updated from search data</span></div></div><aside class="hero-visual" aria-labelledby="hero-visual-heading"><div class="hero-visual-header"><small>Decision dashboard</small><h2 id="hero-visual-heading">Choose the path that matches your question</h2><p>Each route moves from a real-life question to a tool, an explainable result, and a next step.</p></div><div class="path-board"><a class="path-row" href="tools/tdee-calculator.html" data-source="hero-path"><span class="path-label"><strong>Calories</strong><span>TDEE, BMR, deficit</span></span><span class="path-flow"><span class="path-step"><b>Question</b><span>What maintains weight?</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Tool</b><span>TDEE</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Result</b><span>Calories/day</span></span></span></a><a class="path-row" href="tools/walking-time-to-steps-calculator.html" data-source="hero-path"><span class="path-label"><strong>Walking</strong><span>Minutes, steps, pace</span></span><span class="path-flow"><span class="path-step"><b>Question</b><span>How many steps?</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Tool</b><span>Converter</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Result</b><span>Step estimate</span></span></span></a><a class="path-row" href="tools/weight-trend-smoothing-calculator.html" data-source="hero-path"><span class="path-label"><strong>Weight trend</strong><span>Scale noise, averages</span></span><span class="path-flow"><span class="path-step"><b>Question</b><span>Is it changing?</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Tool</b><span>Trend</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Result</b><span>Weekly signal</span></span></span></a><a class="path-row" href="tools/sleep-opportunity-calculator.html" data-source="hero-path"><span class="path-label"><strong>Sleep timing</strong><span>Window, debt, quality</span></span><span class="path-flow"><span class="path-step"><b>Question</b><span>Do I allow enough sleep?</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Tool</b><span>Calculator</span></span><span class="path-arrow">&rarr;</span><span class="path-step"><b>Result</b><span>Sleep window</span></span></span></a></div><div class="visual-metrics"><span>Browser-local inputs</span><span>Method and limits shown</span><span>Educational, not diagnostic</span></div></aside></header>
     <section class="route-section" aria-labelledby="route-heading"><div class="section-heading"><h2 id="route-heading">Start With The Question You Actually Have</h2><p>Choose a route when you do not know the exact tool name yet.</p></div><div class="route-grid">${decisionRoutes}</div></section>
+    <section class="popular-section" aria-labelledby="useful-now-heading"><div class="section-heading"><h2 id="useful-now-heading">Useful Now: High-Intent Calculators</h2><p>Pages with early search visibility, promoted here so visitors and Google can reach them faster.</p></div><div class="popular-grid">${nearWinTools.map(renderNearWinCard).join("")}</div></section>
     <section class="popular-section" aria-labelledby="popular-heading"><div class="section-heading"><h2 id="popular-heading">High-Intent Tools To Start With</h2><p>Fast entry points for the body metrics, calorie, sleep, movement, and self-check questions people search most often.</p></div><div class="popular-grid">${startingPoints.map(renderStartingPointCard).join("")}</div></section>
     <section class="format-band" aria-label="Ways to use ToolsQuark"><div class="format-grid"><div class="format-item"><h2>Calculate</h2><p>Use disclosed formulas and assumptions for body metrics, nutrition, sleep, movement, and dates.</p><a href="health.html">Browse calculators &rarr;</a></div><div class="format-item"><h2>Reflect</h2><p>Review recent patterns with original browser-local self-checks that state their limits.</p><a href="mental-health.html">Browse self-checks &rarr;</a></div><div class="format-item"><h2>Understand</h2><p>Compare similar methods and turn results into a smaller, more useful next step.</p><a href="guides.html">Read decision guides &rarr;</a></div></div></section>
     <section class="category-band" aria-labelledby="category-heading"><div class="section-heading"><h2 id="category-heading">Browse By Category</h2><p>Choose a focused collection or search every tool above.</p></div><div class="category-grid">${categoryLinks}</div></section>
