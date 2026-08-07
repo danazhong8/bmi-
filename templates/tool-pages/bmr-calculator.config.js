@@ -29,6 +29,12 @@ module.exports = {
   relatedTitle: "Turn Baseline Into Daily Targets",
   related: [
     {
+      href: "https://toolsquark.com/guides/mifflin-bmr-tdee-maintenance-calories.html",
+      title: "Mifflin, BMR, TDEE, And Maintenance",
+      description: "Follow the full energy-planning sequence from formula to maintenance calories.",
+      action: "Read Guide"
+    },
+    {
       href: "https://toolsquark.com/guides/metabolic-rate-calculator-vs-bmr.html",
       title: "Metabolic Rate vs BMR",
       description: "Understand why metabolic rate calculator searches often lead to BMR, RMR, and TDEE choices.",
@@ -124,7 +130,7 @@ module.exports = {
     },
     {
       title: "BMR Formula",
-      body: `<p>This calculator uses the Mifflin-St Jeor equation, a common equation for estimating resting energy needs from weight, height, age, and sex.</p><div class="formula-box">Men: BMR = 10 x weight(kg) + 6.25 x height(cm) - 5 x age + 5<br>Women: BMR = 10 x weight(kg) + 6.25 x height(cm) - 5 x age - 161</div><p>Metric inputs in kilograms and centimeters are used directly. Imperial inputs are converted to kilograms and centimeters before the equation is applied, so the calculation remains formula-consistent across unit systems. The <a href="https://toolsquark.com/guides/mifflin-st-jeor-equation-explained.html">Mifflin-St Jeor equation guide</a> shows the variables and worked examples in more detail.</p>`
+      body: `<p>This calculator uses the Mifflin-St Jeor equation, a common equation for estimating resting energy needs from weight, height, age, and sex.</p><div class="formula-box">Men: BMR = 10 x weight(kg) + 6.25 x height(cm) - 5 x age + 5<br>Women: BMR = 10 x weight(kg) + 6.25 x height(cm) - 5 x age - 161</div><p>Metric inputs in kilograms and centimeters are used directly. Imperial inputs are converted to kilograms and centimeters before the equation is applied, so the calculation remains formula-consistent across unit systems. The <a href="https://toolsquark.com/guides/mifflin-st-jeor-equation-explained.html">Mifflin-St Jeor equation guide</a> shows the variables and worked examples in more detail, while the <a href="https://toolsquark.com/guides/mifflin-bmr-tdee-maintenance-calories.html">Mifflin, BMR, TDEE, and maintenance calories guide</a> explains how this baseline becomes a daily planning number.</p>`
     },
     {
       title: "Mifflin-St Jeor Male And Female Equation",

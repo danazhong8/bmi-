@@ -50,6 +50,8 @@ module.exports = {
   extraCss: `.input-help{margin-top:7px;font-size:12px;color:var(--text-muted);line-height:1.45}`,
   relatedTitle: "Track Movement Impact",
   related: [
+    { href: "https://toolsquark.com/guides/common-walking-distances-to-steps.html", title: "Common Walking Distances Guide", description: "Estimate how many steps common routes may add before setting a daily target.", action: "Read Guide" },
+    { href: "https://toolsquark.com/tools/walking-distance-to-steps-calculator.html", title: "Walking Distance To Steps", description: "Convert a known route distance such as 3.4 km, 3.8 km, or 5 km into steps.", action: "Convert Distance" },
     { href: "https://toolsquark.com/tools/walking-time-to-steps-calculator.html", title: "Walking Time To Steps", description: "Estimate how many steps a 10, 20, 30, or 60 minute walk may add.", action: "Convert Time" },
     { href: "https://toolsquark.com/tools/steps-to-calories-converter.html", title: "Steps to Calories Converter", description: "Convert your planned steps into estimated calories.", action: "Estimate Burn" },
     { href: "https://toolsquark.com/tools/water-intake-calculator.html", title: "Water Intake Calculator", description: "Adjust hydration around higher activity volume.", action: "Plan Fluids" },
@@ -103,7 +105,7 @@ module.exports = {
     },
     {
       title: "Turning Steps Into A Routine",
-      body: `<p>A step target works best when it maps to real moments in the day. Instead of treating 8,500 steps as one large task, split the increase into commute walking, short meal walks, errands, call pacing, or a planned evening route.</p><p>If the plan asks for 1,500 more steps than your baseline, use the walking-time converter to estimate the minutes needed at your usual pace. That makes the goal easier to schedule and easier to repeat.</p>`
+      body: `<p>A step target works best when it maps to real moments in the day. Instead of treating 8,500 steps as one large task, split the increase into commute walking, short meal walks, errands, call pacing, or a planned evening route.</p><p>If the plan asks for 1,500 more steps than your baseline, use the walking-time converter to estimate the minutes needed at your usual pace. If you already know the route distance, use the <a href="https://toolsquark.com/tools/walking-distance-to-steps-calculator.html">Walking Distance To Steps Calculator</a> or the <a href="https://toolsquark.com/guides/common-walking-distances-to-steps.html">common walking distances guide</a>. That makes the goal easier to schedule and easier to repeat.</p>`
     }
   ],
   methodology: "This tool maps goals to step targets of 12,000, 8,500, or 5,000 steps/day and distributes the change linearly across the selected plan duration.",

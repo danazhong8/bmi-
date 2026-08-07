@@ -30,6 +30,12 @@ module.exports = {
   relatedTitle: "Build The Planning Sequence",
   related: [
     {
+      href: "https://toolsquark.com/guides/mifflin-bmr-tdee-maintenance-calories.html",
+      title: "Mifflin, BMR, TDEE, And Maintenance",
+      description: "Review the full sequence before choosing maintenance, deficit, or surplus calories.",
+      action: "Read Guide"
+    },
+    {
       href: "https://toolsquark.com/guides/maintenance-calories-vs-calorie-deficit.html",
       title: "Maintenance vs Calorie Deficit",
       description: "Understand when to hold maintenance, when to create a deficit, and how to review the trend.",
@@ -131,7 +137,7 @@ module.exports = {
     },
     {
       title: "Maintenance-First Mode",
-      body: `<p>Search data shows users are looking for maintenance calories more than a generic calorie counter. For that reason, the 0% maintenance option is the default path: it estimates calories to test for weight stability before adding any deficit or surplus.</p><p>Use maintenance-first mode when you want a baseline, a diet break target, or a number to calibrate against your real intake and body-weight trend.</p>`
+      body: `<p>Search data shows users are looking for maintenance calories more than a generic calorie counter. For that reason, the 0% maintenance option is the default path: it estimates calories to test for weight stability before adding any deficit or surplus.</p><p>Use maintenance-first mode when you want a baseline, a diet break target, or a number to calibrate against your real intake and body-weight trend. If the sequence from Mifflin-St Jeor to BMR to TDEE is unclear, read the <a href="https://toolsquark.com/guides/mifflin-bmr-tdee-maintenance-calories.html">Mifflin, BMR, TDEE, and maintenance calories guide</a> first.</p>`
     },
     {
       title: "How The Target Is Calculated",

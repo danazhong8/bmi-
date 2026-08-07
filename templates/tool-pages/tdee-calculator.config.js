@@ -29,6 +29,12 @@ module.exports = {
   relatedTitle: "Refine Your Nutrition Plan",
   related: [
     {
+      href: "https://toolsquark.com/guides/mifflin-bmr-tdee-maintenance-calories.html",
+      title: "Mifflin, BMR, TDEE, And Maintenance",
+      description: "See how the Mifflin formula, BMR, activity multipliers, and maintenance calories connect.",
+      action: "Read Guide"
+    },
+    {
       href: "https://toolsquark.com/guides/bmr-vs-tdee-vs-calorie-goal.html",
       title: "BMR vs TDEE vs Calorie Goal",
       description: "Choose the right energy number before turning it into an intake target.",
@@ -136,7 +142,7 @@ module.exports = {
     },
     {
       title: "Mifflin-St Jeor Equation For Men And Women",
-      body: `<p>Search Console is showing impressions for very specific Mifflin-St Jeor formula queries. This calculator uses the standard sex-specific constants inside the BMR step before applying activity.</p><table class="comparison-table"><thead><tr><th>Equation</th><th>Formula</th><th>What Changes</th></tr></thead><tbody><tr><td>Men</td><td>10W + 6.25H - 5A + 5</td><td>The final constant is +5.</td></tr><tr><td>Women</td><td>10W + 6.25H - 5A - 161</td><td>The final constant is -161.</td></tr></tbody></table><p>After BMR is estimated, TDEE equals BMR multiplied by the selected activity factor. For a deeper formula-only explanation, use the <a href="https://toolsquark.com/guides/mifflin-st-jeor-equation-explained.html">Mifflin-St Jeor equation guide</a> or the <a href="https://toolsquark.com/tools/bmr-calculator.html">BMR calculator</a>.</p>`
+      body: `<p>Search Console is showing impressions for very specific Mifflin-St Jeor formula queries. This calculator uses the standard sex-specific constants inside the BMR step before applying activity.</p><table class="comparison-table"><thead><tr><th>Equation</th><th>Formula</th><th>What Changes</th></tr></thead><tbody><tr><td>Men</td><td>10W + 6.25H - 5A + 5</td><td>The final constant is +5.</td></tr><tr><td>Women</td><td>10W + 6.25H - 5A - 161</td><td>The final constant is -161.</td></tr></tbody></table><p>After BMR is estimated, TDEE equals BMR multiplied by the selected activity factor. For a deeper formula-only explanation, use the <a href="https://toolsquark.com/guides/mifflin-st-jeor-equation-explained.html">Mifflin-St Jeor equation guide</a> or the <a href="https://toolsquark.com/tools/bmr-calculator.html">BMR calculator</a>. For the complete BMR to TDEE to maintenance sequence, use the <a href="https://toolsquark.com/guides/mifflin-bmr-tdee-maintenance-calories.html">Mifflin, BMR, TDEE, and maintenance calories guide</a>.</p>`
     },
     {
       title: "How To Use Your Result",

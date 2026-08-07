@@ -404,6 +404,39 @@ module.exports = [
     related: ["bmr-vs-tdee-vs-calorie-goal", "bmi-vs-body-fat-vs-waist"]
   },
   {
+    slug: "mifflin-bmr-tdee-maintenance-calories",
+    title: "Mifflin-St Jeor, BMR, TDEE, And Maintenance Calories Explained | ToolsQuark",
+    description: "Understand how the Mifflin-St Jeor equation, BMR, TDEE, activity multipliers, maintenance calories, and calorie goals fit together before choosing a calculator.",
+    h1: "Mifflin-St Jeor, BMR, TDEE, And Maintenance Calories",
+    intro: "Many calorie searches mix several numbers together. This guide separates the formula, the resting estimate, the activity estimate, and the final intake decision.",
+    primaryQuery: "mifflin st jeor bmr tdee maintenance calories",
+    tools: [
+      ["bmr-calculator", "BMR Calculator", "Calculate resting calories with the Mifflin-St Jeor equation.", "Calculate BMR"],
+      ["tdee-calculator", "TDEE Calculator", "Add activity level to estimate maintenance calories.", "Calculate TDEE"],
+      ["calorie-calculator", "Daily Calorie Goal Calculator", "Convert maintenance into a deficit, maintenance, or surplus target.", "Plan Goal"],
+      ["maintenance-calorie-calibration-calculator", "Maintenance Calorie Calibration", "Refine maintenance from intake and weight trend.", "Calibrate"]
+    ],
+    sections: [
+      ["The Short Version", `<div class="flow"><strong>Mifflin-St Jeor</strong><span>formula</span><b>&rarr;</b><strong>BMR</strong><span>resting calories</span><b>&rarr;</b><strong>TDEE</strong><span>maintenance estimate</span><b>&rarr;</b><strong>Calorie goal</strong><span>deficit, maintenance, or surplus</span></div><p>The Mifflin-St Jeor equation is not the final daily calorie goal. It estimates BMR first. TDEE adds an activity multiplier. A calorie goal then adjusts that maintenance estimate for your current objective.</p>`],
+      ["Mifflin-St Jeor Is The Formula Step", `<p>The Mifflin-St Jeor equation uses weight, height, age, and sex-specific constants to estimate resting energy expenditure.</p><div class="formula">Men: 10W + 6.25H - 5A + 5<br>Women: 10W + 6.25H - 5A - 161</div><p>W is weight in kilograms, H is height in centimeters, and A is age in years. The equation returns a BMR estimate, not a full-day maintenance number.</p>`],
+      ["BMR vs TDEE vs Maintenance Calories", `<div class="table-wrap"><table><thead><tr><th>Number</th><th>What it answers</th><th>Best tool</th></tr></thead><tbody><tr><td>BMR</td><td>How many calories might the body use at rest?</td><td>BMR Calculator</td></tr><tr><td>TDEE</td><td>How many calories might maintain weight after activity?</td><td>TDEE Calculator</td></tr><tr><td>Maintenance calories</td><td>What daily intake should I test for weight maintenance?</td><td>TDEE first, then calibration</td></tr><tr><td>Calorie goal</td><td>What target should I use for deficit, maintenance, or surplus?</td><td>Daily Calorie Goal Calculator</td></tr></tbody></table></div>`],
+      ["Activity Multipliers Are The Biggest Assumption", `<p>The activity multiplier can move the estimate by hundreds of calories. A formula can be correct while the activity label is still too high or too low for a real week.</p><p>When uncertain, choose a conservative activity level, hold intake steady for two to four weeks, and compare average body-weight trend before changing the formula.</p>`],
+      ["A Practical Sequence", `<ol><li>Use the BMR calculator if you want the formula-only resting estimate.</li><li>Use the TDEE calculator if you want estimated maintenance calories.</li><li>Use the calorie goal calculator only after maintenance is chosen.</li><li>Use maintenance calibration after you have real intake and weight trend data.</li></ol>`],
+      ["When To Avoid Over-Precision", `<p>Pregnancy, breastfeeding, growth, illness recovery, eating-disorder history, medical nutrition needs, and aggressive weight-change goals require individualized professional guidance. These calculators are useful starting estimates, not prescriptions.</p>`]
+    ],
+    faq: [
+      ["Is Mifflin-St Jeor the same as TDEE?", "No. Mifflin-St Jeor estimates BMR. TDEE starts with BMR and adds an activity multiplier."],
+      ["Is TDEE the same as maintenance calories?", "TDEE is an estimated maintenance calorie number. Real maintenance can differ, so calibration from intake and weight trend is useful."],
+      ["Should I calculate BMR or TDEE first?", "Use BMR first if you want the formula baseline. Use TDEE first if your practical question is maintenance calories."],
+      ["Why do calorie calculators give different results?", "They may use different equations, activity assumptions, rounding, goal adjustments, or calibration logic."]
+    ],
+    references: [
+      ["A New Predictive Equation for Resting Energy Expenditure", "The American Journal of Clinical Nutrition / PubMed", "https://pubmed.ncbi.nlm.nih.gov/2305711/"],
+      ["Body Weight Planner", "National Institute of Diabetes and Digestive and Kidney Diseases", "https://www.niddk.nih.gov/bwp"]
+    ],
+    related: ["mifflin-st-jeor-equation-explained", "bmr-vs-tdee-vs-calorie-goal", "maintenance-calories-vs-calorie-deficit"]
+  },
+  {
     slug: "sleep-schedule-and-sleep-quality",
     title: "Sleep Schedule vs Sleep Quality: What To Fix First | ToolsQuark",
     description: "Separate bedtime and wake-time planning from sleep quality, restoration, and daytime impact, then choose the right sleep tool.",
@@ -653,7 +686,39 @@ module.exports = [
       ["Steps per Day and All-Cause Mortality in Middle-aged Adults", "JAMA Network Open / PubMed", "https://pubmed.ncbi.nlm.nih.gov/34477847/"],
       ["Physical Activity Guidelines for Adults", "Centers for Disease Control and Prevention", "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"]
     ],
-    related: ["bmr-vs-tdee-vs-calorie-goal", "sleep-schedule-and-sleep-quality"]
+    related: ["common-walking-distances-to-steps", "bmr-vs-tdee-vs-calorie-goal", "sleep-schedule-and-sleep-quality"]
+  },
+  {
+    slug: "common-walking-distances-to-steps",
+    title: "How Many Steps Are In Common Walking Distances? | ToolsQuark",
+    description: "Estimate steps for common walking distances such as 1 km, 3.4 km, 3.8 km, 5 km, 1 mile, 2 miles, and 3 miles, then choose the right walking calculator.",
+    h1: "How Many Steps Are In Common Walking Distances?",
+    intro: "Distance-to-steps searches are simple on the surface, but stride length changes the answer. This guide gives practical estimates and routes you to the right calculator.",
+    primaryQuery: "how many steps in common walking distances",
+    tools: [
+      ["walking-distance-to-steps-calculator", "Walking Distance To Steps Calculator", "Convert km or miles into estimated steps.", "Convert Distance"],
+      ["step-count-to-distance-calculator", "Step Count To Distance Calculator", "Convert a step count into miles or kilometers.", "Reverse It"],
+      ["walking-time-to-steps-calculator", "Walking Time To Steps Calculator", "Estimate steps from walking minutes.", "Convert Time"],
+      ["daily-steps-goal-calculator", "Daily Steps Goal Calculator", "Turn a route estimate into a realistic daily target.", "Plan Steps"]
+    ],
+    sections: [
+      ["Quick Estimates", `<div class="table-wrap"><table><thead><tr><th>Distance</th><th>Approximate Steps</th><th>Use Case</th></tr></thead><tbody><tr><td>1 km</td><td>About 1,316 steps</td><td>Quick kilometer conversion.</td></tr><tr><td>3.4 km</td><td>About 4,474 steps</td><td>Matches searches like "3.4km in steps".</td></tr><tr><td>3.8 km</td><td>About 5,000 steps</td><td>Close to a 5,000-step route for many walkers.</td></tr><tr><td>5 km</td><td>About 6,579 steps</td><td>Common route, park walk, or event distance.</td></tr><tr><td>1 mile</td><td>About 2,118 steps</td><td>Common U.S. walking route estimate.</td></tr><tr><td>2 miles</td><td>About 4,235 steps</td><td>Useful for short daily walking plans.</td></tr><tr><td>3 miles</td><td>About 6,353 steps</td><td>Often similar to a longer daily walk.</td></tr></tbody></table></div><p>These estimates use the same average 0.76 meter stride assumption as the distance-to-steps calculator. Your actual count can be higher or lower.</p>`],
+      ["Why The Answer Changes", `<p>Steps are distance divided by stride length. Shorter strides produce more steps for the same route; longer strides produce fewer. Speed, turns, hills, fatigue, footwear, and device tracking can also change the real number.</p><div class="formula">Estimated steps = distance in meters / stride length in meters</div>`],
+      ["Which Calculator Should You Use?", `<div class="table-wrap"><table><thead><tr><th>If you know...</th><th>Use...</th><th>Why</th></tr></thead><tbody><tr><td>Distance in km or miles</td><td>Walking Distance To Steps Calculator</td><td>It converts route distance into estimated steps.</td></tr><tr><td>Step count</td><td>Step Count To Distance Calculator</td><td>It converts steps back into estimated distance.</td></tr><tr><td>Walking minutes</td><td>Walking Time To Steps Calculator</td><td>It estimates steps from time and pace.</td></tr><tr><td>Current daily average</td><td>Daily Steps Goal Calculator</td><td>It turns a baseline into a gradual target plan.</td></tr></tbody></table></div>`],
+      ["How To Use 3.4 km And 3.8 km Examples", `<p>If you searched for 3.4 km in steps, the average-stride estimate is about 4,474 steps. If you searched for 3.8 km in steps, the estimate is about 5,000 steps. Use those as route-planning estimates, then compare with your phone or wearable after walking the route.</p>`],
+      ["Turn Route Estimates Into A Daily Plan", `<p>A route estimate is only useful if it fits the day. After estimating a distance, decide whether the walk is a one-time route, a repeatable daily habit, or one block inside a larger step goal. The daily step goal tool is better for gradual weekly planning.</p>`]
+    ],
+    faq: [
+      ["How many steps is 3.4 km?", "Using the default 0.76 m stride assumption, 3.4 km is about 4,474 steps."],
+      ["How many steps is 3.8 km?", "Using the default 0.76 m stride assumption, 3.8 km is about 5,000 steps."],
+      ["How many steps are in 5 km?", "Using the default 0.76 m stride assumption, 5 km is about 6,579 steps."],
+      ["Why do tools give different step estimates?", "They may use different stride assumptions, rounding, pace, terrain, or device data."]
+    ],
+    references: [
+      ["Physical Activity Guidelines for Adults", "Centers for Disease Control and Prevention", "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"],
+      ["Physical Activity Guidelines for Americans", "U.S. Department of Health and Human Services", "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines"]
+    ],
+    related: ["how-to-choose-a-realistic-daily-step-goal", "desk-breaks-walking-and-focus-planning"]
   },
   {
     slug: "bmr-vs-rmr-vs-tdee",

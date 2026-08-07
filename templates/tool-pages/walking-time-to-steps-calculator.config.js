@@ -44,6 +44,8 @@ module.exports = {
   extraCss: `.walking-plan-banner{display:grid;gap:5px;margin-bottom:14px;padding:14px 16px;border:1px solid #bbf7d0;background:#f0fdf4;border-radius:10px;color:#14532d}.walking-plan-banner strong{font-size:15px}.walking-plan-banner span{font-size:13px;line-height:1.5;color:#166534}`,
   relatedTitle: "Use The Estimate",
   related: [
+    { href: "https://toolsquark.com/guides/common-walking-distances-to-steps.html", title: "Common Walking Distances Guide", description: "Compare distance-based estimates for 1 km, 3.4 km, 3.8 km, 5 km, and common mile routes.", action: "Read Guide" },
+    { href: "https://toolsquark.com/tools/walking-distance-to-steps-calculator.html", title: "Walking Distance To Steps", description: "Use this when you know the route distance instead of walking time.", action: "Convert Distance" },
     { href: "https://toolsquark.com/tools/daily-steps-goal-calculator.html", title: "Daily Steps Goal Calculator", description: "Build a progressive step target plan from your baseline.", action: "Plan Steps" },
     { href: "https://toolsquark.com/tools/steps-to-calories-converter.html", title: "Steps To Calories Converter", description: "Turn estimated steps into a rough walking calorie estimate.", action: "Estimate Burn" },
     { href: "https://toolsquark.com/guides/how-to-choose-a-realistic-daily-step-goal.html", title: "Realistic Daily Step Goal Guide", description: "Choose a step goal from your current baseline instead of forcing one universal number.", action: "Read Guide" }
@@ -91,7 +93,7 @@ module.exports = {
     },
     {
       title: "Turn Minutes Into A Daily Step Plan",
-      body: `<p>If your estimate is meant to support a daily step goal, use this calculator for the walk itself and the <a href="https://toolsquark.com/tools/daily-steps-goal-calculator.html">Daily Steps Goal Calculator</a> for the weekly target. That keeps the immediate walk estimate separate from a longer habit plan.</p>`
+      body: `<p>If your estimate is meant to support a daily step goal, use this calculator for the walk itself and the <a href="https://toolsquark.com/tools/daily-steps-goal-calculator.html">Daily Steps Goal Calculator</a> for the weekly target. If you know the route distance instead of minutes, use the <a href="https://toolsquark.com/tools/walking-distance-to-steps-calculator.html">Walking Distance To Steps Calculator</a> or compare common route examples in the <a href="https://toolsquark.com/guides/common-walking-distances-to-steps.html">common walking distances guide</a>.</p>`
     }
   ],
   methodology: "This tool multiplies walking minutes by a selected steps-per-minute preset: 90, 110, or 125.",
