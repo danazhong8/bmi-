@@ -1,10 +1,10 @@
 module.exports = {
   slug: "tdee-calculator",
-  title: "TDEE Calculator | Maintenance Calories By Activity Level",
-  description: "Estimate maintenance calories with a TDEE calculator using Mifflin-St Jeor BMR and activity multipliers. Compare sedentary, light, moderate, and active levels.",
+  title: "TDEE Calculator | Mifflin-St Jeor Maintenance Calories",
+  description: "Estimate maintenance calories with a TDEE calculator using the Mifflin-St Jeor BMR equation and activity multipliers for sedentary, light, moderate, and active levels.",
   h1: "TDEE Calculator",
-  hero: "Estimate your maintenance calories from BMR and activity level. This page keeps TDEE focused on the first decision users search for: what calorie number maintains current weight before a deficit, surplus, or macro split.",
-  heroHighlights: ["Maintenance calories first", "Mifflin-St Jeor BMR", "Activity multiplier comparison"],
+  hero: "Estimate your maintenance calories from the Mifflin-St Jeor BMR equation and activity level. This page keeps TDEE focused on the first decision users search for: what calorie number maintains current weight before a deficit, surplus, or macro split.",
+  heroHighlights: ["Mifflin-St Jeor equation", "Maintenance calories first", "Activity multiplier comparison"],
   schemaName: "Privacy-First TDEE Calculator",
   schemaDescription: "A browser-side Total Daily Energy Expenditure calculator focused on estimated maintenance energy and real-world calibration.",
   lastUpdated: "July 24, 2026",
@@ -133,6 +133,10 @@ module.exports = {
     {
       title: "How This Calculator Works",
       body: `<p>This tool first estimates resting energy expenditure with the Mifflin-St Jeor equations, then multiplies that estimate by a selected activity factor.</p><div class="formula-box">Men: BMR = 10W + 6.25H - 5A + 5<br>Women: BMR = 10W + 6.25H - 5A - 161<br>Maintenance calories = TDEE = BMR x activity multiplier</div><p>W is weight in kilograms, H is height in centimeters, and A is age in years. The sex-specific constants are part of the published equation.</p><ul><li><strong>1.2:</strong> sedentary.</li><li><strong>1.375:</strong> lightly active.</li><li><strong>1.55:</strong> moderately active.</li><li><strong>1.725:</strong> very active.</li><li><strong>1.9:</strong> extra active.</li></ul>`
+    },
+    {
+      title: "Mifflin-St Jeor Equation For Men And Women",
+      body: `<p>Search Console is showing impressions for very specific Mifflin-St Jeor formula queries. This calculator uses the standard sex-specific constants inside the BMR step before applying activity.</p><table class="comparison-table"><thead><tr><th>Equation</th><th>Formula</th><th>What Changes</th></tr></thead><tbody><tr><td>Men</td><td>10W + 6.25H - 5A + 5</td><td>The final constant is +5.</td></tr><tr><td>Women</td><td>10W + 6.25H - 5A - 161</td><td>The final constant is -161.</td></tr></tbody></table><p>After BMR is estimated, TDEE equals BMR multiplied by the selected activity factor. For a deeper formula-only explanation, use the <a href="https://toolsquark.com/guides/mifflin-st-jeor-equation-explained.html">Mifflin-St Jeor equation guide</a> or the <a href="https://toolsquark.com/tools/bmr-calculator.html">BMR calculator</a>.</p>`
     },
     {
       title: "How To Use Your Result",

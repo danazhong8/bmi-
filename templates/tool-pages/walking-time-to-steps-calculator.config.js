@@ -2,11 +2,11 @@ module.exports = {
   categoryHref: "lifestyle.html",
   categoryLabel: "Lifestyle Tools",
   slug: "walking-time-to-steps-calculator",
-  title: "Walking Time To Steps Calculator | Minutes To Steps",
-  description: "Convert walking minutes to steps with easy, moderate, and brisk pace presets. See 30, 45, 60 minute walks and how long 5,000 or 10,000 steps may take.",
+  title: "Walking Time To Steps Calculator | 30, 45, 60 Minutes",
+  description: "Convert walking minutes to steps with easy, moderate, and brisk pace presets. See 15, 30, 45, and 60 minute walks plus how long 5,000 or 10,000 steps may take.",
   h1: "Walking Time To Steps Calculator",
-  hero: "Convert minutes of walking into estimated steps before you leave. Choose a pace preset, get a quick step estimate, then use the result to plan a daily step goal or compare against your phone after the walk.",
-  heroHighlights: ["Minutes to steps", "30, 45, 60 min examples", "5,000 and 10,000 step timing"],
+  hero: "Convert minutes of walking into estimated steps before you leave. Start with common searches like 15, 30, 45, or 60 minutes, choose a pace preset, then use the estimate for a daily step goal or a walking route plan.",
+  heroHighlights: ["15, 30, 45, 60 min examples", "5,000 and 10,000 step timing", "Easy, moderate, brisk pace"],
   schemaName: "Privacy-First Walking Time To Steps Calculator",
   schemaDescription: "A browser-side calculator that estimates walking steps from walking minutes and pace presets.",
   lastUpdated: "July 24, 2026",
@@ -79,7 +79,7 @@ module.exports = {
     },
     {
       title: "Common Walking Time Estimates",
-      body: `<table class="comparison-table"><thead><tr><th>Walking Time</th><th>Easy Pace</th><th>Moderate Pace</th><th>Brisk Pace</th></tr></thead><tbody><tr><td>10 minutes</td><td>900 steps</td><td>1,100 steps</td><td>1,250 steps</td></tr><tr><td>20 minutes</td><td>1,800 steps</td><td>2,200 steps</td><td>2,500 steps</td></tr><tr><td>30 minutes</td><td>2,700 steps</td><td>3,300 steps</td><td>3,750 steps</td></tr><tr><td>45 minutes</td><td>4,050 steps</td><td>4,950 steps</td><td>5,625 steps</td></tr><tr><td>60 minutes</td><td>5,400 steps</td><td>6,600 steps</td><td>7,500 steps</td></tr></tbody></table><p>Use the table for quick planning, then compare against your phone or wearable after the walk.</p>`
+      body: `<table class="comparison-table"><thead><tr><th>Walking Time</th><th>Easy Pace</th><th>Moderate Pace</th><th>Brisk Pace</th></tr></thead><tbody><tr><td>10 minutes</td><td>900 steps</td><td>1,100 steps</td><td>1,250 steps</td></tr><tr><td>15 minutes</td><td>1,350 steps</td><td>1,650 steps</td><td>1,875 steps</td></tr><tr><td>20 minutes</td><td>1,800 steps</td><td>2,200 steps</td><td>2,500 steps</td></tr><tr><td>30 minutes</td><td>2,700 steps</td><td>3,300 steps</td><td>3,750 steps</td></tr><tr><td>45 minutes</td><td>4,050 steps</td><td>4,950 steps</td><td>5,625 steps</td></tr><tr><td>60 minutes</td><td>5,400 steps</td><td>6,600 steps</td><td>7,500 steps</td></tr></tbody></table><p>Use the table for quick planning, then compare against your phone or wearable after the walk.</p>`
     },
     {
       title: "Search-Friendly Examples",

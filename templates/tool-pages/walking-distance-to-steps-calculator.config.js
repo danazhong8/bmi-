@@ -2,11 +2,11 @@ module.exports = {
   categoryHref: "lifestyle.html",
   categoryLabel: "Lifestyle Tools",
   slug: "walking-distance-to-steps-calculator",
-  title: "Walking Distance To Steps Calculator | Miles Or Kilometers",
-  description: "Convert walking distance to estimated steps using distance, unit, and stride length preset. Useful for miles to steps and kilometers to steps planning.",
+  title: "Walking Distance To Steps Calculator | KM Or Miles To Steps",
+  description: "Convert walking distance to estimated steps using miles or kilometers, stride presets, and examples for 3.4 km, 3.8 km, 5 km, 1 mile, and 2 miles.",
   h1: "Walking Distance To Steps Calculator",
-  hero: "Estimate steps from a walking distance in miles or kilometers using a stride-length preset or custom stride.",
-  heroHighlights: ["Miles or kilometers", "Stride preset or custom", "Step-goal next step"],
+  hero: "Estimate steps from a walking distance in miles or kilometers using a stride-length preset or custom stride. Use this page for searches like 3.4 km in steps, 3.8 km in steps, 5 km steps, or miles to steps.",
+  heroHighlights: ["3.4 km and 3.8 km examples", "Miles or kilometers", "Stride preset or custom"],
   schemaName: "Privacy-First Walking Distance To Steps Calculator",
   schemaDescription: "A browser-side distance to steps calculator for walking plans, using distance and stride length assumptions.",
   lastUpdated: "July 13, 2026",
@@ -18,6 +18,7 @@ module.exports = {
   shareResult: true,
   dynamicNextSteps: true,
   controlsHtml: `
+        <div class="intent-banner"><strong>Trying to convert km or miles into steps?</strong><span>Enter route distance first. For queries like 3.4 km in steps or 3.8 km in steps, choose kilometers and keep the average stride preset.</span></div>
         <div class="input-row">
             <div class="input-group">
                 <label for="input_distance">Walking Distance</label>
@@ -48,6 +49,7 @@ module.exports = {
             <label for="input_custom_stride">Custom Stride Length</label>
             <div class="input-wrapper"><input type="number" id="input_custom_stride" value="0.76" min="0.3" max="1.5" step="0.01"><span class="unit-badge">m</span></div>
         </div>`,
+  extraCss: `.intent-banner{display:grid;gap:5px;margin-bottom:14px;padding:14px 16px;border:1px solid #bfdbfe;background:#eff6ff;border-radius:10px;color:#1e3a8a}.intent-banner strong{font-size:15px}.intent-banner span{font-size:13px;line-height:1.5;color:#334155}`,
   relatedTitle: "Movement Planning",
   related: [
     { href: "https://toolsquark.com/tools/walking-time-to-steps-calculator.html", title: "Walking Time To Steps", description: "Estimate steps from walking minutes instead of distance.", action: "Convert Time" },
@@ -60,13 +62,16 @@ module.exports = {
   faq: [
     { question: "How many steps are in a mile?", answer: "Using the default 0.76 m stride, one mile is about 2,118 steps. Actual steps vary with height, stride, speed, grade, and turns." },
     { question: "How many steps are in a kilometer?", answer: "Using the default 0.76 m stride, one kilometer is about 1,316 steps." },
+    { question: "How many steps is 3.4 km?", answer: "Using the default 0.76 m stride, 3.4 km is about 4,474 steps. A shorter stride gives a higher step count, while a longer stride gives a lower step count." },
+    { question: "How many steps is 3.8 km?", answer: "Using the default 0.76 m stride, 3.8 km is about 5,000 steps." },
     { question: "Is this more accurate than a phone?", answer: "No. A phone or wearable can measure your actual steps. This calculator is for planning when you know distance but not step count." }
   ],
   contentSections: [
     { title: "What This Calculator Estimates", body: `<p>This distance-to-steps calculator divides walking distance by estimated stride length. It is useful for route planning, not measurement.</p>` },
     { title: "Formula Used", body: `<div class="formula-box">Estimated steps = distance in meters / stride length in meters</div><p>Stride length is the main assumption. If you know your measured stride, use the custom option.</p>` },
     { title: "Worked Example", body: `<p>Two miles equals 3,218.7 meters. With a 0.76 m stride, estimated steps are 3,218.7 / 0.76 = about 4,235 steps.</p>` },
-    { title: "Common Estimates", body: `<table class="comparison-table"><thead><tr><th>Distance</th><th>Average Stride</th></tr></thead><tbody><tr><td>1 mile</td><td>About 2,118 steps</td></tr><tr><td>2 miles</td><td>About 4,235 steps</td></tr><tr><td>1 km</td><td>About 1,316 steps</td></tr><tr><td>5 km</td><td>About 6,579 steps</td></tr></tbody></table>` }
+    { title: "Common KM To Steps Estimates", body: `<table class="comparison-table"><thead><tr><th>Distance</th><th>Average Stride Estimate</th><th>Common Search Intent</th></tr></thead><tbody><tr><td>1 km</td><td>About 1,316 steps</td><td>Quick kilometer-to-steps conversion.</td></tr><tr><td>3.4 km</td><td>About 4,474 steps</td><td>Useful for searches like "3.4km in steps".</td></tr><tr><td>3.8 km</td><td>About 5,000 steps</td><td>Close to a 5,000-step route for many walkers.</td></tr><tr><td>5 km</td><td>About 6,579 steps</td><td>Common route, event, and park-walk distance.</td></tr></tbody></table>` },
+    { title: "Common Miles To Steps Estimates", body: `<table class="comparison-table"><thead><tr><th>Distance</th><th>Average Stride Estimate</th></tr></thead><tbody><tr><td>1 mile</td><td>About 2,118 steps</td></tr><tr><td>2 miles</td><td>About 4,235 steps</td></tr><tr><td>3 miles</td><td>About 6,353 steps</td></tr></tbody></table><p>If you already know your step count and want distance instead, use the <a href="https://toolsquark.com/tools/step-count-to-distance-calculator.html">Step Count To Distance Calculator</a>.</p>` }
   ],
   methodology: "This tool converts distance to meters, divides by selected stride length in meters, then rounds to the nearest whole step.",
   disclaimer: "Step estimates vary with stride length, speed, terrain, turns, device placement, and walking pattern.",
