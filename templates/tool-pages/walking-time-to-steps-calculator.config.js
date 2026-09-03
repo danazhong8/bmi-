@@ -2,8 +2,8 @@ module.exports = {
   categoryHref: "lifestyle.html",
   categoryLabel: "Lifestyle Tools",
   slug: "walking-time-to-steps-calculator",
-  title: "Walking Time To Steps Calculator | 30, 45, 60 Minutes",
-  description: "Convert walking minutes to steps with easy, moderate, and brisk pace presets. See 15, 30, 45, and 60 minute walks plus how long 5,000 or 10,000 steps may take.",
+  title: "Walking Time To Steps Calculator | 30, 45, 60 Min Walk",
+  description: "Convert walking minutes to steps for 30, 45, 60, or 90 minute walks. See easy, moderate, and brisk pace estimates plus steps-to-minutes examples.",
   h1: "Walking Time To Steps Calculator",
   hero: "Convert minutes of walking into estimated steps before you leave. Start with common searches like 15, 30, 45, or 60 minutes, choose a pace preset, then use the estimate for a daily step goal or a walking route plan.",
   heroHighlights: ["15, 30, 45, 60 min examples", "5,000 and 10,000 step timing", "Easy, moderate, brisk pace"],
@@ -19,8 +19,8 @@ module.exports = {
   dynamicNextSteps: true,
   controlsHtml: `
         <div class="walking-plan-banner">
-            <strong>Trying to answer "how many steps is my walk?"</strong>
-            <span>Enter the walking time, choose easy/moderate/brisk pace, and copy a plain-language estimate you can reuse in a step plan.</span>
+            <strong>30, 45, 60, or 90 minute walk to steps.</strong>
+            <span>Search data shows people asking exact walking-time questions. Enter minutes, choose easy/moderate/brisk pace, and copy a plain-language estimate.</span>
         </div>
         <div class="input-row">
             <div class="input-group">
@@ -56,6 +56,7 @@ module.exports = {
   faq: [
     { question: "How many steps are in 30 minutes of walking?", answer: "At the moderate preset of 110 steps per minute, 30 minutes is about 3,300 steps. Your actual count depends on stride length, speed, terrain, and device tracking." },
     { question: "How many steps are in 45 minutes of walking?", answer: "At the moderate preset of 110 steps per minute, 45 minutes is about 4,950 steps. Easy walking would be about 4,050 steps, while brisk walking would be about 5,625 steps." },
+    { question: "How many steps are in 90 minutes of walking?", answer: "At the moderate preset of 110 steps per minute, 90 minutes is about 9,900 steps. Easy walking would be about 8,100 steps, while brisk walking would be about 11,250 steps." },
     { question: "How long should I walk to get 5,000 steps?", answer: "At the moderate preset, 5,000 steps takes about 45 minutes. At an easy pace it may take closer to 56 minutes, and at a brisk pace it may take about 40 minutes." },
     { question: "How long does it take to walk 10,000 steps?", answer: "At the moderate preset of 110 steps per minute, 10,000 steps takes about 91 minutes. At a brisk pace it may be closer to 80 minutes, while an easy pace may take about 111 minutes." },
     { question: "Can I use this as a steps to minutes calculator?", answer: "Yes. Divide your target steps by the selected steps-per-minute pace. For example, 5,000 steps divided by 110 steps per minute is about 45 minutes." },
@@ -81,11 +82,11 @@ module.exports = {
     },
     {
       title: "Common Walking Time Estimates",
-      body: `<table class="comparison-table"><thead><tr><th>Walking Time</th><th>Easy Pace</th><th>Moderate Pace</th><th>Brisk Pace</th></tr></thead><tbody><tr><td>10 minutes</td><td>900 steps</td><td>1,100 steps</td><td>1,250 steps</td></tr><tr><td>15 minutes</td><td>1,350 steps</td><td>1,650 steps</td><td>1,875 steps</td></tr><tr><td>20 minutes</td><td>1,800 steps</td><td>2,200 steps</td><td>2,500 steps</td></tr><tr><td>30 minutes</td><td>2,700 steps</td><td>3,300 steps</td><td>3,750 steps</td></tr><tr><td>45 minutes</td><td>4,050 steps</td><td>4,950 steps</td><td>5,625 steps</td></tr><tr><td>60 minutes</td><td>5,400 steps</td><td>6,600 steps</td><td>7,500 steps</td></tr></tbody></table><p>Use the table for quick planning, then compare against your phone or wearable after the walk.</p>`
+      body: `<table class="comparison-table"><thead><tr><th>Walking Time</th><th>Easy Pace</th><th>Moderate Pace</th><th>Brisk Pace</th></tr></thead><tbody><tr><td>10 minutes</td><td>900 steps</td><td>1,100 steps</td><td>1,250 steps</td></tr><tr><td>15 minutes</td><td>1,350 steps</td><td>1,650 steps</td><td>1,875 steps</td></tr><tr><td>20 minutes</td><td>1,800 steps</td><td>2,200 steps</td><td>2,500 steps</td></tr><tr><td>30 minutes</td><td>2,700 steps</td><td>3,300 steps</td><td>3,750 steps</td></tr><tr><td>45 minutes</td><td>4,050 steps</td><td>4,950 steps</td><td>5,625 steps</td></tr><tr><td>60 minutes</td><td>5,400 steps</td><td>6,600 steps</td><td>7,500 steps</td></tr><tr><td>90 minutes</td><td>8,100 steps</td><td>9,900 steps</td><td>11,250 steps</td></tr></tbody></table><p>Use the table for quick planning, then compare against your phone or wearable after the walk.</p>`
     },
     {
       title: "Search-Friendly Examples",
-      body: `<div class="use-case-grid"><div class="use-case-card"><strong>How many steps is 30 minutes?</strong><span>About 3,300 steps at a moderate pace, or 2,700 to 3,750 steps across the built-in presets.</span></div><div class="use-case-card"><strong>How many steps is 45 minutes?</strong><span>About 4,950 steps at a moderate pace, useful when planning a longer lunch walk or commute segment.</span></div><div class="use-case-card"><strong>How long is 10,000 steps?</strong><span>About 91 minutes at a moderate pace, with slower and faster estimates shown in the table above.</span></div></div>`
+      body: `<div class="use-case-grid"><div class="use-case-card"><strong>How many steps is 30 minutes?</strong><span>About 3,300 steps at a moderate pace, or 2,700 to 3,750 steps across the built-in presets.</span></div><div class="use-case-card"><strong>How many steps is 45 minutes?</strong><span>About 4,950 steps at a moderate pace, useful when planning a longer lunch walk or commute segment.</span></div><div class="use-case-card"><strong>How many steps is 90 minutes?</strong><span>About 9,900 steps at a moderate pace, close to many 10,000-step walking plans.</span></div><div class="use-case-card"><strong>How long is 10,000 steps?</strong><span>About 91 minutes at a moderate pace, with slower and faster estimates shown in the table above.</span></div></div>`
     },
     {
       title: "How To Calibrate It",

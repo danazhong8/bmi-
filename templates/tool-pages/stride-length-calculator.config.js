@@ -2,11 +2,11 @@ module.exports = {
   categoryHref: "lifestyle.html",
   categoryLabel: "Lifestyle Tools",
   slug: "stride-length-calculator",
-  title: "Stride Length Calculator | Distance And Steps",
-  description: "Calculate average stride length from a known walking distance and step count, then use it for better steps-to-distance estimates.",
-  h1: "Stride Length Calculator",
-  hero: "Calculate your average stride length from a measured distance and step count. Use the result to make steps-to-miles, steps-to-kilometers, and route planning estimates more personal.",
-  heroHighlights: ["Measured route method", "Meters and feet output", "Improves step estimates"],
+  title: "Step Length Calculator | Stride Length From Distance",
+  description: "Calculate step length or stride length from a measured distance and counted steps. See meters, feet, average values, and how to use the result.",
+  h1: "Step Length Calculator: Stride Length From Distance",
+  hero: "Calculate average step length from a measured distance and counted steps. Use the result as a custom stride length for steps-to-miles, steps-to-kilometers, and route planning estimates.",
+  heroHighlights: ["Step length and stride length", "Meters and feet output", "Improves step estimates"],
   schemaName: "Privacy-First Stride Length Calculator",
   schemaDescription: "A browser-side stride length calculator based on measured walking distance and step count.",
   lastUpdated: "July 27, 2026",
@@ -22,7 +22,7 @@ module.exports = {
             <div class="next-step-panel"><h4>Recommended Next Step</h4><div id="next-step-cards" class="next-step-grid"><p class="next-step-empty">Calculate first to see the most relevant follow-up.</p></div></div>
             <div class="share-result-panel"><h4>Shareable Result Summary</h4><p id="share-summary">Calculate first, then copy a short plain-text summary with the measured stride and page link.</p><button type="button" class="share-copy-btn" onclick="copyShareResult()">Copy Summary</button><span id="share-copy-status" aria-live="polite"></span></div>`,
   controlsHtml: `
-        <div class="intent-banner"><strong>Measure once, improve multiple converters.</strong><span>Use a known route and counted steps to create a custom stride for steps-to-distance and distance-to-steps tools.</span></div>
+        <div class="intent-banner"><strong>Calculate step length from distance and steps.</strong><span>Use a measured route and counted steps to create a custom step length for steps-to-distance and distance-to-steps tools.</span></div>
         <div class="input-row">
             <div class="input-group"><label for="input_distance">Measured Distance</label><div class="input-wrapper"><input type="number" id="input_distance" value="400" min="1" max="100000" step="0.1"><span class="unit-badge">distance</span></div></div>
             <div class="input-group"><label for="input_unit">Distance Unit</label><div class="input-wrapper"><select id="input_unit"><option value="1">meters</option><option value="1000">kilometers</option><option value="1609.344">miles</option><option value="0.3048">feet</option></select></div></div>
@@ -40,6 +40,7 @@ module.exports = {
   ],
   faq: [
     { question: "How do I calculate stride length?", answer: "Divide measured distance by counted steps. For example, 400 meters divided by 525 steps gives about 0.76 meters per step." },
+    { question: "How do I calculate step length?", answer: "For step-counter planning, divide measured distance by counted steps. This gives average distance per counted step, shown in meters and feet." },
     { question: "What is an average walking stride length?", answer: "A common planning estimate is around 0.76 meters, or about 2.5 feet, per counted step. Individual stride varies by height, pace, terrain, and mobility." },
     { question: "How long should the measured route be?", answer: "A longer route such as 100 to 400 meters usually gives a better estimate than a few steps across a room because counting or device errors matter less." },
     { question: "Is stride length the same as step length?", answer: "Everyday tools often use the terms loosely. This calculator uses distance per counted step because that is what step counters usually need." },
@@ -48,6 +49,8 @@ module.exports = {
   contentSections: [
     { title: "Why Stride Length Matters", body: `<p>Step estimates become more useful when the stride assumption matches your own gait. A generic stride can be fine for quick planning, but a measured stride is better for repeated walks.</p>` },
     { title: "Formula Used", body: `<div class="formula-box">Average stride length = measured distance / counted steps</div><p>The calculator converts the distance to meters first, then reports meters and feet per step.</p>` },
+    { title: "Step Length vs Stride Length", body: `<p>People often search for step length and stride length as if they are the same. In gait science, stride length can mean the distance from one foot contact to the next contact of the same foot, while step length can mean one foot-to-opposite-foot distance.</p><p>For step-counter calculators, the practical value needed is simpler: average distance per counted step. That is what this page calculates, because it is the value used by steps-to-distance and distance-to-steps tools.</p>` },
+    { title: "Calculate Step Length Example", body: `<p>If you walk 400 meters and count 525 steps, average step length is 400 / 525 = 0.76 meters per counted step, or about 2.50 feet. Use that value as your custom stride when converting steps to distance.</p>` },
     { title: "Simple Measurement Method", body: `<ol><li>Choose a measured route such as 100 m, 400 m, or a known track segment.</li><li>Walk normally and count steps or use a device step count.</li><li>Enter the distance and steps here.</li><li>Use the result in the distance and step converters.</li></ol>` }
     ,
     { title: "Common Reference Values", body: `<table class="comparison-table"><thead><tr><th>Stride Estimate</th><th>Meters</th><th>Feet</th><th>Best Use</th></tr></thead><tbody><tr><td>Shorter walking stride</td><td>0.67 m</td><td>2.20 ft</td><td>Shorter height, slower walking, or cautious estimate.</td></tr><tr><td>Average walking stride</td><td>0.76 m</td><td>2.49 ft</td><td>General steps-to-distance planning.</td></tr><tr><td>Longer walking stride</td><td>0.84 m</td><td>2.76 ft</td><td>Taller users or brisk walking estimates.</td></tr></tbody></table>` }

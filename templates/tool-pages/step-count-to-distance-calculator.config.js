@@ -3,7 +3,7 @@ module.exports = {
   categoryLabel: "Lifestyle Tools",
   slug: "step-count-to-distance-calculator",
   title: "Step Count To Distance Calculator | Steps To Miles Or KM",
-  description: "Convert step count to estimated walking distance in miles or kilometers using stride length presets or a custom stride.",
+  description: "Convert a known step count to estimated miles or kilometers. If your query starts with km or miles, use the distance-to-steps calculator instead.",
   h1: "Step Count To Distance Calculator",
   hero: "Estimate walking distance from steps with an average, shorter, longer, or custom stride length. Use it for common searches like 5,000 steps to miles, 8,000 steps to kilometers, and 10,000 steps distance.",
   heroHighlights: ["5,000 and 10,000 step examples", "Steps to miles or km", "Custom stride option"],
@@ -22,7 +22,7 @@ module.exports = {
             <div class="next-step-panel"><h4>Recommended Next Step</h4><div id="next-step-cards" class="next-step-grid"><p class="next-step-empty">Calculate first to see the most relevant follow-up.</p></div></div>
             <div class="share-result-panel"><h4>Shareable Result Summary</h4><p id="share-summary">Calculate first, then copy a short plain-text summary with the result, assumptions, and page link.</p><button type="button" class="share-copy-btn" onclick="copyShareResult()">Copy Summary</button><span id="share-copy-status" aria-live="polite"></span></div>`,
   controlsHtml: `
-        <div class="intent-banner"><strong>Use your step count as the starting point.</strong><span>Enter steps from your phone or wearable, choose a stride assumption, then convert the result into miles or kilometers.</span></div>
+        <div class="intent-banner"><strong>Use this page only when steps are your starting point.</strong><span>Enter steps from your phone or wearable to estimate distance. For 3.4 km in steps, 3.8 km in steps, or 5 km in steps, use the distance-to-steps page instead.</span></div>
         <div class="input-row">
             <div class="input-group"><label for="input_steps">Step Count</label><div class="input-wrapper"><input type="number" id="input_steps" value="10000" min="1" max="100000" step="1"><span class="unit-badge">steps</span></div></div>
             <div class="input-group"><label for="input_unit">Output Unit</label><div class="input-wrapper"><select id="input_unit"><option value="miles">miles</option><option value="kilometers">kilometers</option></select></div></div>
@@ -43,6 +43,7 @@ module.exports = {
   faq: [
     { question: "How far is 10,000 steps?", answer: "With the default 0.76 m stride, 10,000 steps is about 4.7 miles or 7.6 kilometers. Your actual distance depends on stride length, speed, terrain, and turns." },
     { question: "How far is 5,000 steps?", answer: "With the default 0.76 m stride, 5,000 steps is about 2.4 miles or 3.8 kilometers." },
+    { question: "Should I use this for 3.4 km in steps?", answer: "No. That query starts with a distance, so use the Walking Distance To Steps Calculator. This page starts with a step count and estimates distance." },
     { question: "How many kilometers is 8,000 steps?", answer: "With the default 0.76 m stride, 8,000 steps is about 6.1 kilometers, or about 3.8 miles." },
     { question: "How do I convert steps to miles?", answer: "Multiply steps by stride length in meters, then divide by 1,609.344. This calculator does that conversion and rounds the result." },
     { question: "Is this accurate for running?", answer: "It is intended for walking estimates. Running stride length can be very different, so a GPS watch or measured route is usually better for running distance." }

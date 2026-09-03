@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="https://toolsquark.com/tools/stride-length-calculator.html">
-<title>Stride Length Calculator | Distance And Steps</title>
-<meta name="description" content="Calculate average stride length from a known walking distance and step count, then use it for better steps-to-distance estimates.">
+<title>Step Length Calculator | Stride Length From Distance</title>
+<meta name="description" content="Calculate step length or stride length from a measured distance and counted steps. See meters, feet, average values, and how to use the result.">
 <script type="application/ld+json">
 [
   {
@@ -51,7 +51,7 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Stride Length Calculator",
+        "name": "Step Length Calculator: Stride Length From Distance",
         "item": "https://toolsquark.com/tools/stride-length-calculator.html"
       }
     ]
@@ -66,6 +66,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Divide measured distance by counted steps. For example, 400 meters divided by 525 steps gives about 0.76 meters per step."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate step length?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For step-counter planning, divide measured distance by counted steps. This gives average distance per counted step, shown in meters and feet."
         }
       },
       {
@@ -122,13 +130,13 @@ footer a{color:var(--accent);font-weight:700;text-decoration:none;margin:0 8px}f
 </head>
 <body>
 <div class="container">
-    <div class="breadcrumb"><a href="https://toolsquark.com/">Home</a> &gt; <a href="https://toolsquark.com/lifestyle.html">Lifestyle Tools</a> &gt; <span>Stride Length Calculator</span></div>
-    <div class="hero"><h1>Stride Length Calculator</h1><p>Calculate your average stride length from a measured distance and step count. Use the result to make steps-to-miles, steps-to-kilometers, and route planning estimates more personal.</p><div class="hero-highlights"><span>Measured route method</span><span>Meters and feet output</span><span>Improves step estimates</span></div></div>
+    <div class="breadcrumb"><a href="https://toolsquark.com/">Home</a> &gt; <a href="https://toolsquark.com/lifestyle.html">Lifestyle Tools</a> &gt; <span>Step Length Calculator: Stride Length From Distance</span></div>
+    <div class="hero"><h1>Step Length Calculator: Stride Length From Distance</h1><p>Calculate average step length from a measured distance and counted steps. Use the result as a custom stride length for steps-to-miles, steps-to-kilometers, and route planning estimates.</p><div class="hero-highlights"><span>Step length and stride length</span><span>Meters and feet output</span><span>Improves step estimates</span></div></div>
     <div class="workspace-grid">
     <main class="main-column">
     <div class="card" id="calculator">
 
-        <div class="intent-banner"><strong>Measure once, improve multiple converters.</strong><span>Use a known route and counted steps to create a custom stride for steps-to-distance and distance-to-steps tools.</span></div>
+        <div class="intent-banner"><strong>Calculate step length from distance and steps.</strong><span>Use a measured route and counted steps to create a custom step length for steps-to-distance and distance-to-steps tools.</span></div>
         <div class="input-row">
             <div class="input-group"><label for="input_distance">Measured Distance</label><div class="input-wrapper"><input type="number" id="input_distance" value="400" min="1" max="100000" step="0.1"><span class="unit-badge">distance</span></div></div>
             <div class="input-group"><label for="input_unit">Distance Unit</label><div class="input-wrapper"><select id="input_unit"><option value="1">meters</option><option value="1000">kilometers</option><option value="1609.344">miles</option><option value="0.3048">feet</option></select></div></div>
@@ -156,6 +164,14 @@ footer a{color:var(--accent);font-weight:700;text-decoration:none;margin:0 8px}f
         <div class="formula-box">Average stride length = measured distance / counted steps</div><p>The calculator converts the distance to meters first, then reports meters and feet per step.</p>
     </div>
     <div class="content-section">
+        <h3>Step Length vs Stride Length</h3>
+        <p>People often search for step length and stride length as if they are the same. In gait science, stride length can mean the distance from one foot contact to the next contact of the same foot, while step length can mean one foot-to-opposite-foot distance.</p><p>For step-counter calculators, the practical value needed is simpler: average distance per counted step. That is what this page calculates, because it is the value used by steps-to-distance and distance-to-steps tools.</p>
+    </div>
+    <div class="content-section">
+        <h3>Calculate Step Length Example</h3>
+        <p>If you walk 400 meters and count 525 steps, average step length is 400 / 525 = 0.76 meters per counted step, or about 2.50 feet. Use that value as your custom stride when converting steps to distance.</p>
+    </div>
+    <div class="content-section">
         <h3>Simple Measurement Method</h3>
         <ol><li>Choose a measured route such as 100 m, 400 m, or a known track segment.</li><li>Walk normally and count steps or use a device step count.</li><li>Enter the distance and steps here.</li><li>Use the result in the distance and step converters.</li></ol>
     </div>
@@ -167,6 +183,10 @@ footer a{color:var(--accent);font-weight:700;text-decoration:none;margin:0 8px}f
         <div class="faq-item">
             <h4>How do I calculate stride length?</h4>
             <p>Divide measured distance by counted steps. For example, 400 meters divided by 525 steps gives about 0.76 meters per step.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How do I calculate step length?</h4>
+            <p>For step-counter planning, divide measured distance by counted steps. This gives average distance per counted step, shown in meters and feet.</p>
         </div>
         <div class="faq-item">
             <h4>What is an average walking stride length?</h4>
@@ -258,7 +278,7 @@ function buildShareResultText() {
     const status = document.getElementById('calc-status')?.innerText?.trim() || '';
     const desc = document.getElementById('calc-desc')?.innerText?.trim() || '';
     const suggestion = document.getElementById('calc-suggestion')?.innerText?.trim() || '';
-    return "Stride Length Calculator: " + output + (unit ? " " + unit : "") + " - " + status + ". " + desc + " Next step: " + suggestion + " Source: https://toolsquark.com/tools/stride-length-calculator.html";
+    return "Step Length Calculator: Stride Length From Distance: " + output + (unit ? " " + unit : "") + " - " + status + ". " + desc + " Next step: " + suggestion + " Source: https://toolsquark.com/tools/stride-length-calculator.html";
 }
 
 function refreshShareSummary() {

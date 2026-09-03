@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="https://toolsquark.com/tools/bmi-calculator.html">
-<title>BMI Calculator Metric &amp; Imperial | kg/cm, lb/ft-in</title>
-<meta name="description" content="Calculate adult BMI in metric kg/cm or imperial lb/ft-in units. Includes BMI formula, category, examples for men and adults, limits, and next checks.">
+<title>BMI Calculator Metric &amp; Imperial | BMI In Imperial Units</title>
+<meta name="description" content="Calculate adult BMI in metric kg/cm or imperial lb/ft-in units. Includes imperial BMI formula, metric formula, adult categories, examples, and limits.">
 <script type="application/ld+json">
 [
   {
@@ -60,6 +60,14 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate BMI in imperial units?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use BMI = weight in pounds x 703 divided by height in inches squared. Convert feet and inches to total inches before applying the formula."
+        }
+      },
       {
         "@type": "Question",
         "name": "What formula does this BMI calculator use?",
@@ -193,8 +201,8 @@ footer a{color:var(--accent);font-weight:700;text-decoration:none;margin:0 8px}f
     <div class="card" id="calculator">
 
         <div class="intent-banner">
-            <strong>Metric or imperial BMI in one place.</strong>
-            <span>Choose kg/cm or lb/ft-in, then see the exact formula, adult category, and what to check next.</span>
+            <strong>Metric BMI and imperial BMI in one place.</strong>
+            <span>Choose kg/cm or lb/ft-in, then see the exact formula, adult category, and examples for common imperial-height searches.</span>
         </div>
         <div class="unit-switcher">
             <div class="unit-tab active" id="tab-metric" onclick="switchUnit('metric')">Metric Units (kg/cm)</div>
@@ -239,6 +247,10 @@ footer a{color:var(--accent);font-weight:700;text-decoration:none;margin:0 8px}f
         <p><strong>Metric example:</strong> 70 kg and 175 cm becomes 70 / 1.75<sup>2</sup>, which gives a BMI of 22.9.</p><p><strong>Imperial example:</strong> 154 lb and 5 ft 9 in becomes 154 x 703 / 69<sup>2</sup>, which gives a BMI of 22.7.</p><div class="note-box">Metric and imperial BMI equations should give nearly the same result when the same real-world height and weight are converted correctly. Small differences usually come from rounding the input values.</div>
     </div>
     <div class="content-section">
+        <h3>Imperial BMI Formula Examples</h3>
+        <p>Search Console is showing long-tail interest in imperial BMI and feet/inches conversions. The imperial path converts height to total inches first, then applies the 703 factor.</p><table class="comparison-table"><thead><tr><th>Height Example</th><th>Total Inches</th><th>How It Enters The Formula</th></tr></thead><tbody><tr><td>5 ft 4 in</td><td>64 in</td><td>BMI = weight(lb) x 703 / 64<sup>2</sup></td></tr><tr><td>5 ft 7 in</td><td>67 in</td><td>BMI = weight(lb) x 703 / 67<sup>2</sup></td></tr><tr><td>5 ft 9 in</td><td>69 in</td><td>BMI = weight(lb) x 703 / 69<sup>2</sup></td></tr><tr><td>6 ft 0 in</td><td>72 in</td><td>BMI = weight(lb) x 703 / 72<sup>2</sup></td></tr></tbody></table><p>If you search for "BMI in imperial" or "imperial BMI formula," this is the equation the calculator uses.</p>
+    </div>
+    <div class="content-section">
         <h3>BMI Calculator For Men</h3>
         <p>Adult men use the same BMI equation as other adults: weight adjusted for height. The calculator does not use a separate male BMI formula because adult BMI categories are based on the ratio itself, not on sex-specific constants.</p><p>Interpretation still needs context. Men with higher muscle mass, larger frames, or unusual body composition can have a BMI that looks high without reflecting the same body-fat profile as another person. In those cases, add waist-to-height ratio, body-fat estimation, training history, and clinical markers before making decisions.</p>
     </div>
@@ -263,6 +275,10 @@ footer a{color:var(--accent);font-weight:700;text-decoration:none;margin:0 8px}f
         <p>If your goal is quick screening, the BMI category may be enough. If the result conflicts with your body composition, waist size, training status, or health history, use it as a prompt to add another measure rather than as a final conclusion.</p><ul><li><strong>Need distribution context?</strong> Try the <a href="https://toolsquark.com/tools/waist-to-height-ratio-calculator.html">waist-to-height ratio calculator</a>.</li><li><strong>Need composition context?</strong> Try the <a href="https://toolsquark.com/tools/body-fat-calculator.html">body fat calculator</a>.</li><li><strong>Need nutrition planning?</strong> Estimate <a href="https://toolsquark.com/tools/tdee-calculator.html">TDEE</a> or a <a href="https://toolsquark.com/tools/calorie-calculator.html">daily calorie goal</a> after BMI.</li></ul>
     </div></div>
     <div class="card" id="faq"><h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>How do I calculate BMI in imperial units?</h4>
+            <p>Use BMI = weight in pounds x 703 divided by height in inches squared. Convert feet and inches to total inches before applying the formula.</p>
+        </div>
         <div class="faq-item">
             <h4>What formula does this BMI calculator use?</h4>
             <p>For metric units, BMI = weight(kg) / height(m)^2. For imperial units, BMI = weight(lbs) x 703 / height(in)^2.</p>

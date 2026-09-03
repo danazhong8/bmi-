@@ -1,7 +1,7 @@
 module.exports = {
   slug: "bmi-calculator",
-  title: "BMI Calculator Metric & Imperial | kg/cm, lb/ft-in",
-  description: "Calculate adult BMI in metric kg/cm or imperial lb/ft-in units. Includes BMI formula, category, examples for men and adults, limits, and next checks.",
+  title: "BMI Calculator Metric & Imperial | BMI In Imperial Units",
+  description: "Calculate adult BMI in metric kg/cm or imperial lb/ft-in units. Includes imperial BMI formula, metric formula, adult categories, examples, and limits.",
   h1: "BMI Calculator: Metric kg/cm & Imperial lb/ft-in",
   hero: "Calculate adult body mass index with kg/cm or lb/ft-in inputs, then see the exact formula, category, metric and imperial examples, limitations, and next body-metric options.",
   heroHighlights: ["kg/cm and lb/ft-in inputs", "Metric and imperial formula", "Adult category and limits"],
@@ -17,8 +17,8 @@ module.exports = {
   dynamicNextSteps: true,
   controlsHtml: `
         <div class="intent-banner">
-            <strong>Metric or imperial BMI in one place.</strong>
-            <span>Choose kg/cm or lb/ft-in, then see the exact formula, adult category, and what to check next.</span>
+            <strong>Metric BMI and imperial BMI in one place.</strong>
+            <span>Choose kg/cm or lb/ft-in, then see the exact formula, adult category, and examples for common imperial-height searches.</span>
         </div>
         <div class="unit-switcher">
             <div class="unit-tab active" id="tab-metric" onclick="switchUnit('metric')">Metric Units (kg/cm)</div>
@@ -60,6 +60,10 @@ module.exports = {
     }
   ],
   faq: [
+    {
+      question: "How do I calculate BMI in imperial units?",
+      answer: "Use BMI = weight in pounds x 703 divided by height in inches squared. Convert feet and inches to total inches before applying the formula."
+    },
     {
       question: "What formula does this BMI calculator use?",
       answer: "For metric units, BMI = weight(kg) / height(m)^2. For imperial units, BMI = weight(lbs) x 703 / height(in)^2."
@@ -133,6 +137,10 @@ module.exports = {
     {
       title: "Metric And Imperial BMI Examples",
       body: `<p><strong>Metric example:</strong> 70 kg and 175 cm becomes 70 / 1.75<sup>2</sup>, which gives a BMI of 22.9.</p><p><strong>Imperial example:</strong> 154 lb and 5 ft 9 in becomes 154 x 703 / 69<sup>2</sup>, which gives a BMI of 22.7.</p><div class="note-box">Metric and imperial BMI equations should give nearly the same result when the same real-world height and weight are converted correctly. Small differences usually come from rounding the input values.</div>`
+    },
+    {
+      title: "Imperial BMI Formula Examples",
+      body: `<p>Search Console is showing long-tail interest in imperial BMI and feet/inches conversions. The imperial path converts height to total inches first, then applies the 703 factor.</p><table class="comparison-table"><thead><tr><th>Height Example</th><th>Total Inches</th><th>How It Enters The Formula</th></tr></thead><tbody><tr><td>5 ft 4 in</td><td>64 in</td><td>BMI = weight(lb) x 703 / 64<sup>2</sup></td></tr><tr><td>5 ft 7 in</td><td>67 in</td><td>BMI = weight(lb) x 703 / 67<sup>2</sup></td></tr><tr><td>5 ft 9 in</td><td>69 in</td><td>BMI = weight(lb) x 703 / 69<sup>2</sup></td></tr><tr><td>6 ft 0 in</td><td>72 in</td><td>BMI = weight(lb) x 703 / 72<sup>2</sup></td></tr></tbody></table><p>If you search for "BMI in imperial" or "imperial BMI formula," this is the equation the calculator uses.</p>`
     },
     {
       title: "BMI Calculator For Men",

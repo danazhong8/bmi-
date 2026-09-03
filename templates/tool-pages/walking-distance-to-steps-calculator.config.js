@@ -2,11 +2,11 @@ module.exports = {
   categoryHref: "lifestyle.html",
   categoryLabel: "Lifestyle Tools",
   slug: "walking-distance-to-steps-calculator",
-  title: "Walking Distance To Steps Calculator | KM Or Miles To Steps",
-  description: "Convert walking distance to estimated steps using miles or kilometers, stride presets, and examples for 3.4 km, 3.8 km, 5 km, 1 mile, and 2 miles.",
+  title: "KM To Steps Calculator | 3.4km, 3.8km, 5km Steps",
+  description: "Convert km or miles to estimated steps. Includes quick examples for 3.4 km, 3.8 km, 4.2 km, 5 km, 1 mile, 2 miles, and custom stride length.",
   h1: "Walking Distance To Steps Calculator",
-  hero: "Estimate steps from a walking distance in miles or kilometers using a stride-length preset or custom stride. Use this page for searches like 3.4 km in steps, 3.8 km in steps, 5 km steps, or miles to steps.",
-  heroHighlights: ["3.4 km and 3.8 km examples", "Miles or kilometers", "Stride preset or custom"],
+  hero: "Estimate steps from a walking distance in kilometers or miles using a stride-length preset or custom stride. Use this page for searches like 3.4 km in steps, 3.8 km in steps, 4.2 km in steps, 5 km steps, or miles to steps.",
+  heroHighlights: ["3.4, 3.8, 4.2, 5 km examples", "KM or miles to steps", "Stride preset or custom"],
   schemaName: "Privacy-First Walking Distance To Steps Calculator",
   schemaDescription: "A browser-side distance to steps calculator for walking plans, using distance and stride length assumptions.",
   lastUpdated: "July 13, 2026",
@@ -18,7 +18,7 @@ module.exports = {
   shareResult: true,
   dynamicNextSteps: true,
   controlsHtml: `
-        <div class="intent-banner"><strong>Trying to convert km or miles into steps?</strong><span>Enter route distance first. For queries like 3.4 km in steps or 3.8 km in steps, choose kilometers and keep the average stride preset.</span></div>
+        <div class="intent-banner"><strong>Start here for km to steps searches.</strong><span>For 3.4 km in steps, 3.8 km in steps, 4.2 km in steps, or 5 km in steps, choose kilometers and keep the average stride preset.</span></div>
         <div class="input-row">
             <div class="input-group">
                 <label for="input_distance">Walking Distance</label>
@@ -65,13 +65,14 @@ module.exports = {
     { question: "How many steps are in a kilometer?", answer: "Using the default 0.76 m stride, one kilometer is about 1,316 steps." },
     { question: "How many steps is 3.4 km?", answer: "Using the default 0.76 m stride, 3.4 km is about 4,474 steps. A shorter stride gives a higher step count, while a longer stride gives a lower step count." },
     { question: "How many steps is 3.8 km?", answer: "Using the default 0.76 m stride, 3.8 km is about 5,000 steps." },
+    { question: "How many steps is 4.2 km?", answer: "Using the default 0.76 m stride, 4.2 km is about 5,526 steps. A shorter stride gives a higher estimate and a longer stride gives a lower estimate." },
     { question: "Is this more accurate than a phone?", answer: "No. A phone or wearable can measure your actual steps. This calculator is for planning when you know distance but not step count." }
   ],
   contentSections: [
     { title: "What This Calculator Estimates", body: `<p>This distance-to-steps calculator divides walking distance by estimated stride length. It is useful for route planning, not measurement.</p>` },
     { title: "Formula Used", body: `<div class="formula-box">Estimated steps = distance in meters / stride length in meters</div><p>Stride length is the main assumption. If you know your measured stride, use the custom option.</p>` },
     { title: "Worked Example", body: `<p>Two miles equals 3,218.7 meters. With a 0.76 m stride, estimated steps are 3,218.7 / 0.76 = about 4,235 steps.</p>` },
-    { title: "Common KM To Steps Estimates", body: `<table class="comparison-table"><thead><tr><th>Distance</th><th>Average Stride Estimate</th><th>Common Search Intent</th></tr></thead><tbody><tr><td>1 km</td><td>About 1,316 steps</td><td>Quick kilometer-to-steps conversion.</td></tr><tr><td>3.4 km</td><td>About 4,474 steps</td><td>Useful for searches like "3.4km in steps".</td></tr><tr><td>3.8 km</td><td>About 5,000 steps</td><td>Close to a 5,000-step route for many walkers.</td></tr><tr><td>5 km</td><td>About 6,579 steps</td><td>Common route, event, and park-walk distance.</td></tr></tbody></table>` },
+    { title: "Common KM To Steps Estimates", body: `<table class="comparison-table"><thead><tr><th>Distance</th><th>Average Stride Estimate</th><th>Common Search Intent</th></tr></thead><tbody><tr><td>1 km</td><td>About 1,316 steps</td><td>Quick kilometer-to-steps conversion.</td></tr><tr><td>2.3 km</td><td>About 3,026 steps</td><td>Short route or errand walk estimate.</td></tr><tr><td>3.4 km</td><td>About 4,474 steps</td><td>Useful for searches like "3.4km in steps".</td></tr><tr><td>3.8 km</td><td>About 5,000 steps</td><td>Close to a 5,000-step route for many walkers.</td></tr><tr><td>4.2 km</td><td>About 5,526 steps</td><td>Search Console is already showing this long-tail query.</td></tr><tr><td>5 km</td><td>About 6,579 steps</td><td>Common route, event, and park-walk distance.</td></tr></tbody></table>` },
     { title: "Common Miles To Steps Estimates", body: `<table class="comparison-table"><thead><tr><th>Distance</th><th>Average Stride Estimate</th></tr></thead><tbody><tr><td>1 mile</td><td>About 2,118 steps</td></tr><tr><td>2 miles</td><td>About 4,235 steps</td></tr><tr><td>3 miles</td><td>About 6,353 steps</td></tr></tbody></table><p>If you already know your step count and want distance instead, use the <a href="https://toolsquark.com/tools/step-count-to-distance-calculator.html">Step Count To Distance Calculator</a>. For a fuller comparison of 1 km, 3.4 km, 3.8 km, 5 km, and common mile distances, read the <a href="https://toolsquark.com/guides/common-walking-distances-to-steps.html">common walking distances guide</a>.</p>` }
   ],
   methodology: "This tool converts distance to meters, divides by selected stride length in meters, then rounds to the nearest whole step.",

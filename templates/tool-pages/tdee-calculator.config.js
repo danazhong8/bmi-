@@ -1,7 +1,7 @@
 module.exports = {
   slug: "tdee-calculator",
-  title: "TDEE Calculator | Mifflin-St Jeor Maintenance Calories",
-  description: "Estimate maintenance calories with a TDEE calculator using the Mifflin-St Jeor BMR equation and activity multipliers for sedentary, light, moderate, and active levels.",
+  title: "TDEE Calculator | Activity Factor & Mifflin-St Jeor",
+  description: "Estimate TDEE maintenance calories with Mifflin-St Jeor and activity factors: sedentary 1.2, lightly active 1.375, moderate 1.55, very active 1.725.",
   h1: "TDEE Calculator",
   hero: "Estimate your maintenance calories from the Mifflin-St Jeor BMR equation and activity level. This page keeps TDEE focused on the first decision users search for: what calorie number maintains current weight before a deficit, surplus, or macro split.",
   heroHighlights: ["Mifflin-St Jeor equation", "Maintenance calories first", "Activity multiplier comparison"],
@@ -17,8 +17,8 @@ module.exports = {
   dynamicNextSteps: true,
   controlsHtml: `
         <div class="maintenance-estimate-banner">
-            <strong>Looking for your maintenance calories?</strong>
-            <span>TDEE is the full-day maintenance estimate. Calculate it first, then decide whether to keep maintenance, create a deficit, or test a small surplus.</span>
+            <strong>TDEE activity factors shown before you calculate.</strong>
+            <span>Use Mifflin-St Jeor for BMR, then compare sedentary 1.2, lightly active 1.375, moderate 1.55, and very active 1.725 multipliers.</span>
         </div>
         <div class="unit-switcher">
             <div class="unit-tab active" id="tab-metric" onclick="switchUnit('metric')">Metric Units (kg/cm)</div>
@@ -79,6 +79,10 @@ module.exports = {
   ],
   faq: [
     {
+      question: "What are the common TDEE activity factors?",
+      answer: "Common TDEE activity factors are 1.2 for sedentary, 1.375 for lightly active, 1.55 for moderately active, 1.725 for very active, and 1.9 for extra active. This calculator shows those multipliers before applying them."
+    },
+    {
       question: "What does TDEE mean?",
       answer: "TDEE means Total Daily Energy Expenditure. It estimates how many calories you burn in a full day after resting metabolism and your usual activity level are included."
     },
@@ -132,6 +136,10 @@ module.exports = {
     { title: "Body Weight Planner", publisher: "National Institute of Diabetes and Digestive and Kidney Diseases", href: "https://www.niddk.nih.gov/bwp" }
   ],
   contentSections: [
+    {
+      title: "Quick Activity Factor Reference",
+      body: `<table class="comparison-table"><thead><tr><th>Activity Factor</th><th>Label</th><th>Plain-English Use</th></tr></thead><tbody><tr><td>1.2</td><td>Sedentary</td><td>Desk-heavy routine with little purposeful exercise.</td></tr><tr><td>1.375</td><td>Lightly active</td><td>Light exercise or regular low-volume movement.</td></tr><tr><td>1.55</td><td>Moderately active</td><td>Regular training or a consistently active week.</td></tr><tr><td>1.725</td><td>Very active</td><td>Frequent training, high step volume, or active job demands.</td></tr><tr><td>1.9</td><td>Extra active</td><td>Very high training and activity load; easy to overestimate.</td></tr></tbody></table><p>Google is already showing this page for activity-factor searches, so the multipliers are placed near the top instead of buried inside the calculator.</p>`
+    },
     {
       title: "What TDEE Means",
       body: `<p>Total Daily Energy Expenditure is an estimate of how many calories your body burns in a typical day. It combines your resting metabolic needs with daily movement, exercise, digestion, and general activity.</p><p>In practical nutrition planning, TDEE is the maintenance calorie estimate. It is most useful after a <a href="https://toolsquark.com/tools/bmr-calculator.html">BMR estimate</a> and before choosing a moderate fat-loss deficit, a maintenance target, or a controlled muscle-gain surplus in the <a href="https://toolsquark.com/tools/calorie-calculator.html">daily calorie goal calculator</a>.</p>`
